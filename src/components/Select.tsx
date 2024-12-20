@@ -61,7 +61,7 @@ const StyledSelect = styled.div`
 
 const StyledOptions = styled.div`
     position: absolute;
-    top: 4.5rem;
+    top: 2.5rem;
     display: flex;
     flex-direction: column;
     align-items: center;

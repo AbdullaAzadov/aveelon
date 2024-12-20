@@ -1,5 +1,8 @@
 {
-    "it-services": "IT услуги",
-    "marketing": "Маркетинг",
-    "portfolio": "Портфолио"
+  "russian": "Русский",
+  "kazakh": "Қазақша",
+  "english": "English",
+  "it-services": "IT қызметтері",
+  "marketing": "Маркетинг",
+  "portfolio": "Портфолио"
 }

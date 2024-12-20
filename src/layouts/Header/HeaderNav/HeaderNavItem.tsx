@@ -28,7 +28,13 @@ const StyledWrapper = styled.div`
   cursor: pointer;
 
   @media (max-width: ${(p) => p.theme.breakpoints.wideTablet}) {
-    width: 7rem;
+    width: 6.5rem;
+    min-width: 6.5rem;
+  }
+
+  @media (max-width: ${(p) => p.theme.breakpoints.tablet}) {
+    width: 40vw;
+    min-width: 9.5rem;
   }
 
   * {

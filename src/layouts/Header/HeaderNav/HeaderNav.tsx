@@ -18,6 +18,11 @@ const StyledWrapper = styled.div`
   gap: 1.25rem;
 
   @media (max-width: ${(p) => p.theme.breakpoints.desktop}) {
+    flex-direction: row;
     gap: 1px;
+  }
+  @media (max-width: ${(p) => p.theme.breakpoints.tablet}) {
+    flex-direction: column;
+    gap: 1.25rem;
   }
 `;
