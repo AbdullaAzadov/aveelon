@@ -21,7 +21,7 @@ export const theme = {
         h1: '3rem',
         h2: '1.75rem',
         h3: '1.375rem',
-        p: '1.125rem',
+        p: '1rem',
       },
       s: {
         h1: '2rem',
@@ -39,6 +39,7 @@ export const theme = {
   },
   breakpoints: {
     tablet: '768px',
-    desktop: '1024px',
+    wideTablet: '1024px',
+    desktop: '1280px',
   },
 };

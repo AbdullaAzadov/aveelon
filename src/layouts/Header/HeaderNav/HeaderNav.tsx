@@ -5,14 +5,19 @@ import styled from 'styled-components';
 export const HeaderNav = () => {
   return (
     <StyledWrapper>
-
-        {headerLinks.map((link) => <HeaderNavItem key={link.name} data={link} />)}
+      {headerLinks.map((link) => (
+        <HeaderNavItem key={link.name} data={link} />
+      ))}
     </StyledWrapper>
-  )
-}
+  );
+};
 
 const StyledWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 1.25rem;
-`
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+
+  @media (max-width: ${(p) => p.theme.breakpoints.desktop}) {
+    gap: 1px;
+  }
+`;

@@ -40,10 +40,17 @@ const StyledWrapper = styled.div`
 
 const StyledActions = styled.div`
   display: flex;
+  align-items: center;
   gap: 2rem;
+  @media (max-width: ${(p) => p.theme.breakpoints.desktop}) {
+    gap: 0.375rem;
+  }
 `;
 
 const StyledLinks = styled.div`
   display: flex;
-  gap: 1.25rem;
+  gap: 0;
+  @media (min-width: ${(p) => p.theme.breakpoints.wideTablet}) {
+    gap: 1.25rem;
+  }
 `;
