@@ -66,15 +66,14 @@ font-size: ${props => {
 `
 
 type TextProps = {
-    color: keyof typeof theme.colors
+    color?: keyof typeof theme.colors
     children?: React.ReactNode,
     as?: keyof JSX.IntrinsicElements
 }
 
-const Text:FC<TextProps> = ({color, children, as='p'}) => {
+export const Text:FC<TextProps> = ({color='white', children, as='p'}) => {
   return (
     <StyledText as={as} color={color}>{children}</StyledText>
   )
 }
 
-export default Text

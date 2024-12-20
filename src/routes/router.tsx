@@ -28,9 +28,14 @@ const router = createBrowserRouter([{
         },
         {
             path: RouteNames.PRIVACY_POLICY,
-            element: <h1>Privacy Policy</h1>
+            element: <h1>Privacy Policy</h1>    
         },
     ]
+
+},
+{
+    path: '*',
+    element: <h1>404</h1>
 }])
 
 export default router
