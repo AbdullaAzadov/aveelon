@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { IHeaderLink } from '@data/Header';
 import { Text } from '@components/index';
 import { useNavigate } from 'react-router-dom';
+import { media } from '@utils/style-helpers';
 
 type HeaderNavProps = {
   data: IHeaderLink;
@@ -15,26 +16,35 @@ export const HeaderNavItem: FC<HeaderNavProps> = ({ data }) => {
 
   return (
     <StyledWrapper onClick={() => nav(data.link)}>
-      <Text as='p'>{t(data.name)}</Text>
+      <Text as='p' className='text'>
+        {t(data.name)}
+      </Text>
     </StyledWrapper>
   );
 };
 
 const StyledWrapper = styled.div`
   background-color: ${(p) => p.theme.colors.dark};
-  width: 10.75rem;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.625rem 0;
+  width: clamp(9.75rem, 33.333vw - 16.917rem, 10.75rem);
   cursor: pointer;
 
-  @media (max-width: ${(p) => p.theme.breakpoints.wideTablet}) {
-    width: 6.5rem;
-    min-width: 6.5rem;
+  ${({ theme }) => media.between(theme, 'tablet', 'wideTablet')} {
+    width: clamp(5rem, 25vw - 7rem, 9rem);
+    .text {
+      font-size: clamp(0.75rem, 0rem + 1.5625vw, 1rem);
+    }
   }
 
-  @media (max-width: ${(p) => p.theme.breakpoints.tablet}) {
-    width: 40vw;
-    min-width: 9.5rem;
+  ${({ theme }) => media.between(theme, 'wideTablet', 'desktop')} {
+    width: 9rem;
+  }
+
+  ${({ theme }) => media.lessThan(theme, 'tablet')} {
+    width: clamp(9.75rem, 47.222vw - 4.417rem, 18.25rem);
   }
 
   * {

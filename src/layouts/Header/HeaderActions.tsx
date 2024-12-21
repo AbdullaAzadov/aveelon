@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { LinkedIcon, Logo } from '@components/index';
 import { useScreenType } from '@hooks/useScreenType';
 import { CONST } from '@constants/constants';
+import { media } from '@utils/style-helpers';
 
 export const HeaderActions = () => {
   const { isMobile, isSmallMobile } = useScreenType();
@@ -49,7 +50,8 @@ const StyledActions = styled.div`
   display: flex;
   align-items: center;
   gap: 2rem;
-  @media (max-width: ${(p) => p.theme.breakpoints.desktop}) {
+
+  ${({ theme }) => media.lessThan(theme, 'desktop')} {
     gap: 0.375rem;
   }
 `;
@@ -57,7 +59,10 @@ const StyledActions = styled.div`
 const StyledLinks = styled.div`
   display: flex;
   gap: 0;
-  @media (min-width: ${(p) => p.theme.breakpoints.wideTablet}) {
+  ${({ theme }) => media.moreThan(theme, 'wideTablet')} {
+    gap: 0.25rem;
+  }
+  ${({ theme }) => media.moreThan(theme, 'desktop')} {
     gap: 1.25rem;
   }
 `;
@@ -67,10 +72,15 @@ const StyledLogoSide = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (min-width: ${(p) => p.theme.breakpoints.tablet}) {
-    gap: 1rem;
+  ${({ theme }) => media.between(theme, 'tablet', 'wideTablet')} {
+    gap: 0.25rem;
   }
-  @media (min-width: ${(p) => p.theme.breakpoints.desktop}) {
+
+  ${({ theme }) => media.between(theme, 'wideTablet', 'desktop')} {
+    gap: 1.125rem;
+  }
+
+  ${({ theme }) => media.moreThan(theme, 'desktop')} {
     gap: 2.5rem;
   }
 `;

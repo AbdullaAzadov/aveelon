@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { HeaderNav, LanguageSelector } from './index';
 import { TelegramIcon, WhatsappIcon } from '@components/icons';
 import { LinkedIcon } from '@components/LinkedIcon';
-export { CONST } from '@constants/constants';
+import CONST from '@constants/constants';
 
 export const HeaderBurger = () => {
   return (

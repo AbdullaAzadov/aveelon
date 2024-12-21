@@ -1,6 +1,7 @@
 import { headerLinks } from '@data/Header';
 import { HeaderNavItem } from './HeaderNavItem';
 import styled from 'styled-components';
+import { media } from '@utils/style-helpers';
 
 export const HeaderNav = () => {
   return (
@@ -15,13 +16,16 @@ export const HeaderNav = () => {
 const StyledWrapper = styled.div`
   display: flex;
   align-items: center;
+  flex-direction: row;
   gap: 1.25rem;
 
-  @media (max-width: ${(p) => p.theme.breakpoints.desktop}) {
-    flex-direction: row;
-    gap: 1px;
+  ${({ theme }) => media.between(theme, 'wideTablet', 'desktop')} {
+    gap: 0.25rem;
   }
-  @media (max-width: ${(p) => p.theme.breakpoints.tablet}) {
+  ${({ theme }) => media.lessThan(theme, 'wideTablet')} {
+    gap: 2px;
+  }
+  ${({ theme }) => media.lessThan(theme, 'tablet')} {
     flex-direction: column;
     gap: 1.25rem;
   }

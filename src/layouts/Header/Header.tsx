@@ -24,14 +24,5 @@ export const Header = () => {
 
 const StyledHeaderWrapper = styled.header`
   background-color: ${(p) => p.theme.colors.darkLight};
-
-  @media (max-width: ${(p) => p.theme.breakpoints.wideTablet}) {
-    padding: 1.25rem 1vw;
-  }
-  @media (max-width: ${(p) => p.theme.breakpoints.tablet}) {
-    padding: 1.25rem 5vw;
-  }
-  @media (min-width: ${(p) => p.theme.breakpoints.wideTablet}) {
-    padding: 1.25rem 5vw;
-  }
+  padding: 1.25rem 5vw;
 `;
