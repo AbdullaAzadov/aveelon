@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import { HeaderNav, LanguageSelector } from './index';
 import { TelegramIcon, WhatsappIcon } from '@components/icons';
+import { LinkedIcon } from '@components/LinkedIcon';
+export { CONST } from '@constants/constants';
 
 export const HeaderBurger = () => {
   return (
@@ -9,20 +11,14 @@ export const HeaderBurger = () => {
       <StyledActions>
         <LanguageSelector />
         <StyledLinks>
-          <a
-            href='http://t.me/aveelon'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <WhatsappIcon />
-          </a>
-          <a
-            href='http://t.me/aveelon'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <TelegramIcon />
-          </a>
+          <LinkedIcon
+            renderIcon={<WhatsappIcon />}
+            link={CONST.WHATSAPP_LINK}
+          />
+          <LinkedIcon
+            renderIcon={<TelegramIcon />}
+            link={CONST.TELEGRAM_LINK}
+          />
         </StyledLinks>
       </StyledActions>
     </StyledWrapper>

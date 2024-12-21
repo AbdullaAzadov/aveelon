@@ -3,8 +3,9 @@ import { HeaderNav, LanguageSelector } from './index';
 import { Tel } from '@components/Tel';
 import { TelegramIcon, WhatsappIcon } from '@components/icons';
 import { useNavigate } from 'react-router-dom';
-import { Logo } from '@components/index';
+import { LinkedIcon, Logo } from '@components/index';
 import { useScreenType } from '@hooks/useScreenType';
+import { CONST } from '@constants/constants';
 
 export const HeaderActions = () => {
   const { isMobile, isSmallMobile } = useScreenType();
@@ -23,20 +24,14 @@ export const HeaderActions = () => {
         <LanguageSelector />
         <Tel value='77008008283' label='+7 700 800 82 83' />
         <StyledLinks>
-          <a
-            href='http://t.me/aveelon'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <WhatsappIcon />
-          </a>
-          <a
-            href='http://t.me/aveelon'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <TelegramIcon />
-          </a>
+          <LinkedIcon
+            renderIcon={<WhatsappIcon />}
+            link={CONST.WHATSAPP_LINK}
+          />
+          <LinkedIcon
+            renderIcon={<TelegramIcon />}
+            link={CONST.TELEGRAM_LINK}
+          />
         </StyledLinks>
       </StyledActions>
     </StyledWrapper>

@@ -1,8 +1,16 @@
 {
-    "russian": "Русский",
-    "kazakh": "Қазақша",
-    "english": "English",
-    "it-services": "IT услуги",
-    "marketing": "Маркетинг",
-    "portfolio": "Портфолио"
+  "russian": "Русский",
+  "kazakh": "Қазақша",
+  "english": "English",
+  "it-services": "IT услуги",
+  "marketing": "Маркетинг",
+  "portfolio": "Портфолио",
+
+  "our-services": "Наши услуги",
+  "our-works": "Наши работы",
+  "information": "Информация",
+  "public-offer": "Публичная оферта",
+  "privacy-policy": "Политика конфиденциальности",
+  "contacts": "Контакты",
+  "protected-rights": "© 2012–2025 aveelon web-design studio. Все права защищены."
 }

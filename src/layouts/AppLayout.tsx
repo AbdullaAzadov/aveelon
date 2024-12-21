@@ -1,15 +1,15 @@
 import { Outlet } from 'react-router-dom';
 import styled from 'styled-components';
-import { Header } from './index';
+import { Footer, Header } from './index';
 
 export default function AppLayout() {
   return (
     <StyledMainContainer>
       <Header />
-      <main>
+      <main style={{ minHeight: '70vh', backgroundColor: '#fff' }}>
         <Outlet />
       </main>
-      <footer></footer>
+      <Footer />
     </StyledMainContainer>
   );
 }
