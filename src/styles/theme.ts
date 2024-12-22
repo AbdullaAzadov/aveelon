@@ -21,14 +21,14 @@ export const theme = {
       m: {
         h1: '3rem',
         h2: '1.75rem',
-        h3: '1.375rem',
+        h3: '1.25rem',
         p: '1rem',
         h4: '0.875rem',
       },
       s: {
         h1: '2rem',
         h2: '1.5rem',
-        h3: '1.25rem',
+        h3: '1.125rem',
         p: '1rem',
         h4: '0.75rem',
       },

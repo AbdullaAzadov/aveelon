@@ -29,12 +29,12 @@ export const Accordion: FC<AccordionProps> = ({
     <SContainer className={className}>
       <header onClick={() => setIsOpen((prev) => !prev)}>
         <span>{title}</span>
-        <SIconSpan
-          rotateAngle={ActiveIcon ? 0 : rotateAngle}
+        <SIcon
+          $rotateAngle={ActiveIcon ? 0 : rotateAngle}
           className={clsx('icon', isOpen && 'active')}
         >
           {isOpen ? ActiveIcon ?? BaseIcon : BaseIcon}
-        </SIconSpan>
+        </SIcon>
       </header>
       <main className={clsx(isOpen && 'active')}>
         {isOpen ? children : null}
@@ -50,34 +50,43 @@ const SContainer = styled.div`
   header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 0.625rem;
     cursor: pointer;
     @include p1();
   }
   main {
+    margin-left: 0.5rem;
     max-height: 0;
     margin-top: 0;
     transition: height 500ms ease, margin 300ms ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
 
     &.active {
-      margin-top: 16px;
+      margin-top: 0.625rem;
       max-height: fit-content;
     }
   }
 `;
 
-const SIconSpan = styled.span<{ rotateAngle: number }>`
-  padding: 18px;
+const SIcon = styled.div<{ $rotateAngle: number }>`
+  margin-top: 2px;
   transition: all 0.3s ease;
+  height: 100%;
   svg {
-    width: 18px;
-    height: 18px;
+    width: 0.875rem;
+    height: 0.875rem;
   }
 
   &.active {
-    transform: ${(p) => `rotateZ(${p.rotateAngle ?? 180}deg)`};
+    transform: ${(p) => `rotateZ(${p.$rotateAngle ?? 180}deg)`};
     svg path {
       stroke: color(brand-1);
     }
   }
 `;
+
+SIcon.defaultProps = {
+  $rotateAngle: 0,
+};
