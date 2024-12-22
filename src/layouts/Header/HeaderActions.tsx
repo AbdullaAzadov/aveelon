@@ -4,20 +4,17 @@ import { Tel } from '@components/Tel';
 import { TelegramIcon, WhatsappIcon } from '@components/icons';
 import { useNavigate } from 'react-router-dom';
 import { LinkedIcon, Logo } from '@components/index';
-import { useScreenType } from '@hooks/useScreenType';
 import { CONST } from '@constants/constants';
 import { media } from '@utils/style-helpers';
 
 export const HeaderActions = () => {
-  const { isMobile, isSmallMobile } = useScreenType();
-  const logoSize = isSmallMobile ? 'small' : isMobile ? 'medium' : 'large';
   const nav = useNavigate();
 
   return (
     <StyledWrapper>
       <StyledLogoSide>
         <StyledLogo>
-          <Logo size={logoSize} onClick={() => nav('/')} />
+          <Logo onClick={() => nav('/')} />
         </StyledLogo>
         <HeaderNav />
       </StyledLogoSide>

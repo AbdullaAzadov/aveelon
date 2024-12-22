@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { Text, Logo } from '@components/index';
+import { media } from '@utils/style-helpers';
 
 export const FooterAbout = () => {
   const { t } = useTranslation();
+
   return (
     <SWrapper>
       <hr />
@@ -24,5 +26,15 @@ const SWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  ${({ theme }) => media.lessThan(theme, 'tablet')} {
+    hr {
+      margin-bottom: 1rem;
+    }
+    div.row {
+      flex-direction: column;
+      gap: 1rem;
+    }
   }
 `;

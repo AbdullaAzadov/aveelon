@@ -5,3 +5,4 @@ export * from './Tel';
 export * from './IconButton';
 export * from './Mail';
 export * from './LinkedIcon';
+export * from './Accordion';

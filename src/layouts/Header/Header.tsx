@@ -6,18 +6,18 @@ import { HeaderActions, HeaderActionsMobile, HeaderBurger } from './index';
 
 export const Header = () => {
   const [showBurger, setShowBurger] = useState<boolean>(false);
-  const { isMobile, isSmallMobile } = useScreenType();
+  const { isMobile } = useScreenType();
 
   return (
     <>
       <StyledHeaderWrapper>
-        {!isMobile && !isSmallMobile ? (
+        {!isMobile ? (
           <HeaderActions />
         ) : (
           <HeaderActionsMobile setIsShow={setShowBurger} isShow={showBurger} />
         )}
       </StyledHeaderWrapper>
-      {(isMobile || isSmallMobile) && showBurger && <HeaderBurger />}
+      {isMobile && showBurger && <HeaderBurger />}
     </>
   );
 };

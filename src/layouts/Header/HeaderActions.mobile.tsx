@@ -15,7 +15,7 @@ export const HeaderActionsMobile: FC<props> = ({ isShow, setIsShow }) => {
   return (
     <StyledWrapper>
       <StyledLogo>
-        <Logo size={'medium'} onClick={() => nav('/')} />
+        <Logo onClick={() => nav('/')} />
       </StyledLogo>
       <Tel value='77008008283' label='+7 700 800 82 83' />
       <IconButton size='1.75rem'>

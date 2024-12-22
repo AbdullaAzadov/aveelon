@@ -29,7 +29,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0.625rem 0;
-  width: clamp(9.75rem, 33.333vw - 16.917rem, 10.75rem);
+  width: clamp(5.75rem, 8.929vw + 0.036rem, 10.75rem);
   cursor: pointer;
 
   ${({ theme }) => media.between(theme, 'tablet', 'wideTablet')} {

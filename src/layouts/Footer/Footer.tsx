@@ -20,4 +20,11 @@ const StyledWrapper = styled.footer`
   ${({ theme }) => media.between(theme, 'tablet', 'wideTablet')} {
     gap: 2rem;
   }
+
+  ${({ theme }) => media.lessThan(theme, 'desktop')} {
+    padding: 3.25rem 5vw;
+  }
+  ${({ theme }) => media.lessThan(theme, 'tablet')} {
+    padding: 2.5rem 5vw;
+  }
 `;
