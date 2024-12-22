@@ -24,5 +24,4 @@ export const Header = () => {
 
 const StyledHeaderWrapper = styled.header`
   background-color: ${(p) => p.theme.colors.darkLight};
-  padding: 1.25rem 5vw;
 `;

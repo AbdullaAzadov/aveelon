@@ -14,7 +14,7 @@ export const Footer = () => {
 };
 
 const StyledWrapper = styled.footer`
-  padding: 4rem 5vw;
+  padding: 4rem 0;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -24,9 +24,9 @@ const StyledWrapper = styled.footer`
   }
 
   ${({ theme }) => media.lessThan(theme, 'desktop')} {
-    padding: 3.25rem 5vw;
+    padding: 3.25rem 0;
   }
   ${({ theme }) => media.lessThan(theme, 'tablet')} {
-    padding: 2.5rem 5vw;
+    padding: 2.5rem 0;
   }
 `;
