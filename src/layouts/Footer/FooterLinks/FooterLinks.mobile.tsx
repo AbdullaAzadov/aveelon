@@ -15,7 +15,7 @@ export const FooterLinksMobile = () => {
           key={index}
         />
       ))}
-      {/* <FooterLinkItem header='contacts'>
+      <FooterLinkItemMobile header='contacts'>
         <Tel value='77008008283' label='+7 700 800 82 83' />
         <Mail value={'info@aveelon.com'} label='info@aveelon.com' />
         <StyledIconsWrapper>
@@ -28,7 +28,7 @@ export const FooterLinksMobile = () => {
             link={CONST.TELEGRAM_LINK}
           />
         </StyledIconsWrapper>
-      </FooterLinkItem> */}
+      </FooterLinkItemMobile>
     </StyledWrapper>
   );
 };

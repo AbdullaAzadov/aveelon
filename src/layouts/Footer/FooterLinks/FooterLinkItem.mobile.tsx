@@ -28,8 +28,8 @@ export const FooterLinkItemMobile = ({
             <Text as='p'>{t(item.name)}</Text>
           </Link>
         ))}
+        {children}
       </Accordion>
-      {children}
     </StyledWrapper>
   );
 };
