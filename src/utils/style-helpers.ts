@@ -17,3 +17,16 @@ export const media = {
   moreThan: (theme: Tprop, value: string) =>
     `@media (min-width: ${theme.breakpoints[`${value}`]})`,
 };
+
+export function percentageClamp(
+  minWidth: number,
+  maxWidth: number,
+  minPercent: number,
+  maxPercent: number
+) {
+  return `clamp(
+    ${minPercent}%,
+    calc(${minPercent}% + (${maxPercent}% - ${minPercent}%) * ((100vw - ${minWidth}px) / (${maxWidth} - ${minWidth}))),
+    ${maxPercent}%
+  )`;
+}

@@ -14,11 +14,11 @@ const router = createBrowserRouter([
       },
       {
         path: RouteNames.SERVICES,
-        element: <h1>Services</h1>,
+        element: <Pages.ServicesPage />,
       },
       {
         path: RouteNames.MARKETING,
-        element: <h1>Marketing</h1>,
+        element: <Pages.MarketingPage />,
       },
       {
         path: RouteNames.PORTFOLIO.INDEX,

@@ -42,6 +42,7 @@ type TextProps = {
   className?: string;
   children?: React.ReactNode;
   as?: keyof JSX.IntrinsicElements;
+  style?: React.CSSProperties;
 };
 
 export const Text: FC<TextProps> = ({
@@ -49,9 +50,10 @@ export const Text: FC<TextProps> = ({
   children,
   as = 'p',
   className = '',
+  style = {},
 }) => {
   return (
-    <StyledText as={as} color={color} className={className}>
+    <StyledText as={as} color={color} className={className} style={style}>
       {children}
     </StyledText>
   );

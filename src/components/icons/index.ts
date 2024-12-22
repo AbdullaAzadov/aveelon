@@ -1,3 +1,4 @@
+export * from './MainPage/index';
 export * from './ArrowDown';
 export * from './ArrowRight';
 export * from './Whatsapp';
