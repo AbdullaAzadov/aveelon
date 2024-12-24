@@ -10,6 +10,10 @@ export const HeaderBurger = () => {
 };
 
 const StyledWrapper = styled.div`
-  padding-top: 2rem;
+  top: 7.5rem;
   background-color: ${(p) => p.theme.colors.darkLight};
+  position: fixed;
+  z-index: 9999;
+  width: 100vw;
+  padding: 2.5rem 0;
 `;

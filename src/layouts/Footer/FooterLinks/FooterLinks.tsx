@@ -4,6 +4,7 @@ import { FooterLinkItem } from './FooterLinkItem';
 import { Mail, Tel, LinkedIcon } from '@components/index';
 import { TelegramIcon, WhatsappIcon } from '@components/icons';
 import { CONST } from '@constants/constants';
+import { media } from '@utils/style-helpers';
 
 export const FooterLinks = () => {
   return (
@@ -32,9 +33,30 @@ export const FooterLinks = () => {
 const StyledWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+
+  ${({ theme }) => media.between(theme, 'ultraSmall', 'tablet', false)} {
+    flex-wrap: wrap;
+    div {
+      width: 50%;
+      &:not(:last-of-type) {
+        margin-bottom: 2.5rem;
+      }
+    }
+  }
+  ${({ theme }) => media.lessThan(theme, 'ultraSmall')} {
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 auto;
+    width: 12rem;
+  }
 `;
 
 const StyledIconsWrapper = styled.div`
   display: flex;
   gap: 1.25rem;
+
+  ${({ theme }) => media.lessThan(theme, 'tablet')} {
+    margin: 0 auto;
+    justify-content: center;
+  }
 `;

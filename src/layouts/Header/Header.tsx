@@ -23,14 +23,17 @@ export const Header = () => {
 };
 
 const StyledHeaderWrapper = styled.header`
-  background-color: ${(p) => p.theme.colors.darkLight};
-  padding: 1.875rem 0;
+  position: fixed;
+  background: ${(p) => p.theme.colors.darkLight};
+  z-index: 9999;
+  width: 92vw;
+  padding: 1.5rem 4vw;
 
   ${({ theme }) => media.lessThan(theme, 'desktop')} {
-    padding: 1.375rem 0;
+    padding: 1.375rem 4vw;
   }
 
   ${({ theme }) => media.lessThan(theme, 'tablet')} {
-    padding: 1rem 0;
+    padding: 1rem 4vw;
   }
 `;

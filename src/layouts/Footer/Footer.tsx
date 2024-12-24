@@ -1,17 +1,17 @@
 import styled from 'styled-components';
-import { FooterLinks, FooterAbout, FooterLinksMobile } from './index';
+import { FooterLinks, FooterAbout } from './index';
 import { media } from '@utils/style-helpers';
-import { useScreenType } from '@hooks/useScreenType';
 
 export const Footer = () => {
-  const { isMobile } = useScreenType();
   return (
     <StyledWrapper>
-      {isMobile ? <FooterLinksMobile /> : <FooterLinks />}
+      <FooterLinks />
       <FooterAbout />
     </StyledWrapper>
   );
 };
+
+// {isMobile ? <FooterLinksMobile /> : <FooterLinks />}
 
 const StyledWrapper = styled.footer`
   padding: 4rem 0;

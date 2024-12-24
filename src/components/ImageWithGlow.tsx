@@ -28,14 +28,15 @@ const SWrapper = styled.div`
 
 const SBlur = styled.div`
   position: absolute;
-  width: 45%;
-  height: 45%;
+  width: 40%;
+  height: 40%;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
   z-index: 1;
 
   background: #ffffff;
-  filter: blur(10rem);
+  opacity: 0.9;
+  filter: blur(clamp(6rem, 6.6667vw + 4rem, 12rem));
   mix-blend-mode: soft-light;
 `;
