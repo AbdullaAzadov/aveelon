@@ -19,7 +19,6 @@ export const HeaderActions = () => {
         <HeaderNav />
       </StyledLogoSide>
       <StyledActions>
-        <LanguageSelector />
         <Tel value='77008008283' label='+7 700 800 82 83' />
         <StyledLinks>
           <LinkedIcon
@@ -31,6 +30,7 @@ export const HeaderActions = () => {
             link={CONST.TELEGRAM_LINK}
           />
         </StyledLinks>
+        <LanguageSelector />
       </StyledActions>
     </StyledWrapper>
   );

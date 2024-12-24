@@ -12,9 +12,8 @@ export const Header = () => {
   return (
     <>
       <StyledHeaderWrapper>
-        {!isMobile ? (
-          <HeaderActions />
-        ) : (
+        {!isMobile && <HeaderActions />}
+        {isMobile && (
           <HeaderActionsMobile setIsShow={setShowBurger} isShow={showBurger} />
         )}
       </StyledHeaderWrapper>

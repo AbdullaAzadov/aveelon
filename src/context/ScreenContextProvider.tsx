@@ -23,6 +23,7 @@ export const ScreenProvider: React.FC<{ children: React.ReactNode }> = ({
       isTablet: windowWidth <= 1280 && windowWidth > 768,
       isMobile: windowWidth <= 768,
       isSmallMobile: windowWidth <= 480,
+      isUltraSmall: windowWidth <= 375,
       windowWidth,
     }),
     [windowWidth]

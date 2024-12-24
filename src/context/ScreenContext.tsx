@@ -6,6 +6,7 @@ export type TScreenType = {
   isTablet: boolean;
   isMobile: boolean;
   isSmallMobile: boolean;
+  isUltraSmall: boolean;
   windowWidth: number;
 };
 

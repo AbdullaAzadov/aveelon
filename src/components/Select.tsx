@@ -88,6 +88,7 @@ const StyledOptions = styled.div`
   box-shadow: 2px 3px 20px 0px hsla(0, 0%, 0%, 0.12);
   border-radius: 1rem;
   gap: 20px;
+  z-index: 10000;
 `;
 const StyledOptionItem = styled.div`
   text-align: center;

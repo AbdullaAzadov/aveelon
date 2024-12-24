@@ -20,7 +20,7 @@ export const TabBar: FC<ITabBarProps> = ({
   tabs,
   cardSize = 'normal',
 }) => {
-  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTab] = useState(0);
   const { t } = useTranslation();
   return (
     <StyledWrapper>

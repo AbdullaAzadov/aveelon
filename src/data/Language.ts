@@ -1,19 +1,18 @@
-import { IselectOption } from "@components/Select"
+import { IselectOption } from '@components/Select';
 
-export type TLanguage = "ru" | 'kz' | "en"
-
+export type TLanguage = 'ru' | 'kz' | 'en';
 
 export const LanguageData: IselectOption[] = [
-{
+  {
     value: 'ru',
-    label: 'russian'
-},
-{
-    value: 'kz',
-    label: 'kazakh'
-},
-{
+    label: 'russian',
+  },
+  {
     value: 'en',
-    label: 'english'
-},
-]
+    label: 'english',
+  },
+  {
+    value: 'kz',
+    label: 'kazakh',
+  },
+];
