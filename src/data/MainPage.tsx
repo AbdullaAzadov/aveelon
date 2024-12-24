@@ -1,13 +1,7 @@
 import { PageHeroSectionProps } from '@pages/HeroSection';
 import img_hero from '@assets/images/computer-solutions.png';
-import { ITabBarProps } from '@components/TabBar';
-import {
-  CodeIcon,
-  CRMIcon,
-  ERMIcon,
-  IntegrationIcon,
-  SupportIcon,
-} from '@components/icons';
+import { ITabBarProps } from '@components/Tab/TabBar';
+import * as icons from '@components/icons/MainPage/index';
 
 export const MainPageHeroData: PageHeroSectionProps = {
   header: 'main-page-hero-header',
@@ -78,7 +72,7 @@ export const allServicesData: ITabBarProps = {
       tabName: 'it-services',
       card: [
         {
-          icon: <CodeIcon />,
+          icon: <icons.CodeIcon />,
           title: {
             value: 'design-and-development',
           },
@@ -87,7 +81,7 @@ export const allServicesData: ITabBarProps = {
           },
         },
         {
-          icon: <IntegrationIcon />,
+          icon: <icons.IntegrationIcon />,
           title: {
             value: 'integration-and-support',
           },
@@ -96,7 +90,7 @@ export const allServicesData: ITabBarProps = {
           },
         },
         {
-          icon: <CRMIcon />,
+          icon: <icons.CRMIcon />,
           title: {
             value: 'developing-crm',
           },
@@ -105,7 +99,7 @@ export const allServicesData: ITabBarProps = {
           },
         },
         {
-          icon: <ERMIcon />,
+          icon: <icons.ERMIcon />,
           title: {
             value: 'developing-erm',
           },
@@ -114,12 +108,62 @@ export const allServicesData: ITabBarProps = {
           },
         },
         {
-          icon: <SupportIcon />,
+          icon: <icons.SupportIcon />,
           title: {
             value: 'tech-support',
           },
           body: {
             value: 'tech-support-desc',
+          },
+        },
+      ],
+    },
+    {
+      tabName: 'marketing',
+      card: [
+        {
+          icon: <icons.MarketingContentIcon />,
+          title: {
+            value: 'content-marketing',
+          },
+          body: {
+            value: 'content-marketing-desc',
+          },
+        },
+        {
+          icon: <icons.SEOIcon />,
+          title: {
+            value: 'seo-optimization',
+          },
+          body: {
+            value: 'seo-optimization-desc',
+          },
+        },
+        {
+          icon: <icons.SMMIcon />,
+          title: {
+            value: 'socials-and-smm',
+          },
+          body: {
+            value: 'socials-and-smm-desc',
+          },
+        },
+        {
+          icon: <icons.EmailMarketingIcon />,
+          title: {
+            value: 'email-marketing',
+          },
+          body: {
+            value: 'email-marketing-desc',
+          },
+        },
+        {
+          icon: <icons.AnalyzeMarketingIcon />,
+          title: {
+            value: 'analyzing-and-optimization-marketing',
+          },
+          body: {
+            value: 'analyzing-and-optimization-marketing-desc',
           },
         },
       ],

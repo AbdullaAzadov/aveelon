@@ -2,6 +2,11 @@
 @import '/node_modules/reset-css/reset.css';
 
 a {
-  text-decoration: none;
+  text-decoration-color: transparent;
   color: inherit;
+  transition: all 0.3s ease-in;
+}
+
+a:not(.link-icon):hover {
+  text-decoration-color: #df3d3ab5;
 }

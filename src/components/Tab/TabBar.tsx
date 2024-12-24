@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import { Card, TCardProps, Text } from './index';
+import { Card, TabSections, TCardProps, Text } from '../index';
 import { media } from '@utils/style-helpers';
 
 export interface ITabBarContent {
@@ -20,15 +20,34 @@ export const TabBar: FC<ITabBarProps> = ({
   tabs,
   cardSize = 'normal',
 }) => {
-  const [selectedTab] = useState(0);
+  const tabSections = tabs
+    .map((tab) => tab.tabName)
+    .filter((name): name is string => name !== undefined);
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const currentTab = tabs[selectedIndex];
+
   const { t } = useTranslation();
+
+  if (!currentTab) return null;
   return (
     <StyledWrapper>
-      <Text as='h1' className='header-text'>
-        {t(header)}
-      </Text>
-      <Grid $count={tabs[selectedTab].card.length} $cols={4}>
-        {tabs[selectedTab].card.map((card, index) => (
+      <div className='heading'>
+        <Text as='h1' className='header-text'>
+          {t(header)}
+        </Text>
+        {tabSections.length > 1 && (
+          <div className='tabs'>
+            <TabSections
+              sections={tabSections}
+              selectedIndex={selectedIndex}
+              onSelectSection={setSelectedIndex}
+              size='m'
+            />
+          </div>
+        )}
+      </div>
+      <Grid $count={currentTab.card.length} $cols={4}>
+        {currentTab.card.map((card, index) => (
           <Card
             key={index}
             icon={card.icon}
@@ -43,10 +62,15 @@ export const TabBar: FC<ITabBarProps> = ({
 };
 
 const StyledWrapper = styled.div`
-  .header-text {
-    margin-bottom: 5rem;
+  .heading {
+    margin-bottom: 3.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
     ${({ theme }) => media.lessThan(theme, 'desktop')} {
-      margin-bottom: 2rem;
+      gap: 2rem;
+      align-items: center;
       text-align: center;
     }
   }

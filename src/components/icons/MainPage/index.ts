@@ -3,3 +3,8 @@ export * from './CRM';
 export * from './ERM';
 export * from './Integration';
 export * from './Support';
+export * from './AnalyzeMarketing';
+export * from './SMM';
+export * from './EmailMarketing';
+export * from './MarketingContent';
+export * from './SEO';

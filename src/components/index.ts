@@ -9,6 +9,6 @@ export * from './Accordion';
 export * from './ImageWithGlow';
 export * from './Button';
 export * from './Card';
-export * from './TabBar';
+export * from './Tab/index';
 
 export * from '../pages/HeroSection';
