@@ -3,6 +3,7 @@ import { allServicesData, MainPageHeroData as HeroData } from '@data/MainPage';
 import { AboutUsData } from '@data/MainPage';
 import { useScreenType } from '@hooks/useScreenType';
 import styled from 'styled-components';
+import { PortfolioHighlight } from './PortfolioHighlight';
 
 export const MainPage = () => {
   const { isMobile } = useScreenType();
@@ -27,6 +28,7 @@ export const MainPage = () => {
       ) : (
         <TabBar header={allServicesData.header} tabs={allServicesData.tabs} />
       )}
+      <PortfolioHighlight />
     </SContainer>
   );
 };

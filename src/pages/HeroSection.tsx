@@ -28,7 +28,9 @@ export const PageHeroSection: React.FC<PageHeroSectionProps> = ({
         <Button onClick={handleClick}>{t(buttonText)}</Button>
       </div>
       <div className='right'>
-        <ImageWithGlow src={imageSrc} alt='Computer' />
+        <div className='image-wrapper'>
+          <ImageWithGlow src={imageSrc} alt='Computer' />
+        </div>
       </div>
     </SWrapper>
   );
@@ -52,6 +54,11 @@ const SWrapper = styled.div`
     display: flex;
     justify-content: flex-end;
     padding-right: 3rem;
+  }
+
+  .image-wrapper {
+    width: clamp(15.25rem, 31.771vw + 0rem, 38.125rem);
+    height: clamp(15.25rem, 31.771vw + 0rem, 38.125rem);
   }
 
   ${({ theme }) => media.lessThan(theme, 'tablet')} {

@@ -9,8 +9,22 @@ export const theme = {
     white: '#fff',
     black: '#000',
   },
+  breakpoints: {
+    ultraSmall: '375px',
+    smallMobile: '480px',
+    tablet: '768px',
+    wideTablet: '1024px',
+    desktop: '1280px',
+  },
   font: {
     family: '"Geologica", serif',
+    weight: {
+      h1: 600,
+      h2: 500,
+      h3: 500,
+      h4: 400,
+      p: 400,
+    },
     size: {
       l: {
         h1: '4rem',
@@ -34,19 +48,5 @@ export const theme = {
         h4: '0.75rem',
       },
     },
-    weight: {
-      h1: 600,
-      h2: 500,
-      h3: 500,
-      h4: 400,
-      p: 400,
-    },
-  },
-  breakpoints: {
-    ultraSmall: '375px',
-    smallMobile: '480px',
-    tablet: '768px',
-    wideTablet: '1024px',
-    desktop: '1280px',
   },
 };

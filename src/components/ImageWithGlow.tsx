@@ -4,21 +4,25 @@ import styled from 'styled-components';
 interface ImageWithGlowProps extends React.HTMLAttributes<HTMLDivElement> {
   src: string;
   alt?: string;
+  hideGlow?: boolean;
 }
 
-export const ImageWithGlow: FC<ImageWithGlowProps> = ({ src, alt = '' }) => {
+export const ImageWithGlow: FC<ImageWithGlowProps> = ({
+  src,
+  alt = '',
+  hideGlow = false,
+  ...props
+}) => {
   return (
     <SWrapper>
-      <SBlur />
-      <img src={src} alt={alt} />
+      {!hideGlow && <SBlur />}
+      <img src={src} alt={alt} {...props} />
     </SWrapper>
   );
 };
 
 const SWrapper = styled.div`
   position: relative;
-  width: clamp(15.25rem, 31.771vw + 0rem, 38.125rem);
-  height: clamp(15.25rem, 31.771vw + 0rem, 38.125rem);
 
   img {
     z-index: 10;
