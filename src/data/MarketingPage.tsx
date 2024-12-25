@@ -1,8 +1,9 @@
 import { PageHeroSectionProps } from '@pages/HeroSection';
 import { IProcessStep } from './ProccesSteps';
 import img_hero from '@assets/images/connection.png';
-import * as icons from '@components/icons/MarketingPage/index';
+import * as icons from '@components/icons/index';
 import { ITabBarProps } from '@components/Tab';
+import { IStackShowcase } from './StackShowcase';
 
 export const MarketingPageHeroData: PageHeroSectionProps = {
   header: 'marketing-page-hero-header',
@@ -157,6 +158,104 @@ export const PromotionMethodsData: ITabBarProps = {
           body: {
             value: 'email-marketing-desc2',
           },
+        },
+      ],
+    },
+  ],
+};
+
+export const MarketingStackData: IStackShowcase = {
+  title: 'tech-capabilities',
+  desc: 'tech-capabilities-desc',
+  stack: [
+    {
+      title: 'marketing',
+      tab: [
+        {
+          items: [
+            {
+              name: 'Google',
+              icon: <icons.GoogleIcon />,
+            },
+            {
+              name: 'Sendpulse',
+              icon: <icons.SendpulseIcon />,
+            },
+            {
+              name: 'Mailchimp',
+              icon: <icons.MailchimpIcon />,
+            },
+            {
+              name: 'Yandex',
+              icon: <icons.YandexIcon />,
+            },
+            {
+              name: 'LinkedIn',
+              icon: <icons.LinkdeInIcon />,
+            },
+            {
+              name: 'Twitter',
+              icon: <icons.TwitterIcon />,
+            },
+            {
+              name: 'Facebook',
+              icon: <icons.FacebookIcon />,
+            },
+            {
+              name: 'TikTok',
+              icon: <icons.TikTokIcon />,
+            },
+            {
+              name: 'Getresponse',
+              icon: <icons.GetresponseIcon />,
+            },
+          ],
+        },
+      ],
+    },
+    {
+      title: 'analytics',
+      tab: [
+        {
+          title: 'analytics-for-web',
+          items: [
+            {
+              name: 'Google',
+              icon: <icons.GoogleIcon />,
+            },
+            {
+              name: 'Sendpulse',
+              icon: <icons.SendpulseIcon />,
+            },
+            {
+              name: 'Mailchimp',
+              icon: <icons.MailchimpIcon />,
+            },
+            {
+              name: 'Yandex',
+              icon: <icons.YandexIcon />,
+            },
+            {
+              name: 'LinkedIn',
+              icon: <icons.LinkdeInIcon />,
+            },
+            {
+              name: 'Twitter',
+              icon: <icons.TwitterIcon />,
+            },
+            {
+              name: 'Facebook',
+              icon: <icons.FacebookIcon />,
+            },
+            {
+              name: 'TikTok',
+              icon: <icons.TikTokIcon />,
+            },
+            {
+              name: 'Getresponse',
+              icon: <icons.GetresponseIcon />,
+            },
+          ],
         },
       ],
     },
