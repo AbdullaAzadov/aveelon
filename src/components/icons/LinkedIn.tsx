@@ -1,4 +1,4 @@
-export function LinkdeInIcon() {
+export function LinkedInIcon() {
   return (
     <svg
       width='62'

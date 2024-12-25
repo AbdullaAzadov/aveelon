@@ -14,4 +14,6 @@ export * from './ProcessSteps';
 export * from './ProcessCarousel';
 export * from './ImageStack';
 
+export * from './StackShowcase/index';
+export * from './icons/index';
 export * from '@pages/index';

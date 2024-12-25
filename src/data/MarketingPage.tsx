@@ -191,7 +191,7 @@ export const MarketingStackData: IStackShowcase = {
             },
             {
               name: 'LinkedIn',
-              icon: <icons.LinkdeInIcon />,
+              icon: <icons.LinkedInIcon />,
             },
             {
               name: 'Twitter',
@@ -220,40 +220,53 @@ export const MarketingStackData: IStackShowcase = {
           title: 'analytics-for-web',
           items: [
             {
-              name: 'Google',
-              icon: <icons.GoogleIcon />,
+              name: 'Yandex Metrica',
+              icon: <icons.YandexMetricaIcon />,
             },
             {
-              name: 'Sendpulse',
-              icon: <icons.SendpulseIcon />,
+              name: 'Google Analytics',
+              icon: <icons.GoogleAnalyticsIcon />,
             },
             {
-              name: 'Mailchimp',
-              icon: <icons.MailchimpIcon />,
+              name: 'Excel',
+              icon: <icons.ExcelIcon />,
             },
             {
-              name: 'Yandex',
-              icon: <icons.YandexIcon />,
+              name: 'Power BI',
+              icon: <icons.PowerBIIcon />,
             },
             {
-              name: 'LinkedIn',
-              icon: <icons.LinkdeInIcon />,
+              name: 'Python',
+              icon: <icons.PythonIcon />,
             },
             {
-              name: 'Twitter',
-              icon: <icons.TwitterIcon />,
+              name: 'SQL',
+              icon: <icons.SQLIcon />,
             },
             {
-              name: 'Facebook',
-              icon: <icons.FacebookIcon />,
+              name: 'Tableau',
+              icon: <icons.TableauIcon />,
             },
             {
-              name: 'TikTok',
-              icon: <icons.TikTokIcon />,
+              name: 'AppsFlyer',
+              icon: <icons.AppsFlyerIcon />,
             },
             {
-              name: 'Getresponse',
-              icon: <icons.GetresponseIcon />,
+              name: 'Amplitude',
+              icon: <icons.AmplitudeIcon />,
+            },
+          ],
+        },
+        {
+          title: 'e2e-analytics',
+          items: [
+            {
+              name: 'Roistat',
+              icon: <icons.RoistatIcon />,
+            },
+            {
+              name: 'Power BI',
+              icon: <icons.PowerBIIcon />,
             },
           ],
         },

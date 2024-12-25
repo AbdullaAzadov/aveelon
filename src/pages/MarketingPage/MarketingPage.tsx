@@ -4,9 +4,11 @@ import {
   ProcessSteps,
   TabBar,
   TabCarousel,
+  StackShowcase,
 } from '@components/index';
 import {
   MarketingPageHeroData as HeroData,
+  MarketingStackData,
   MarkettingProcessData,
   PromotionMethodsData,
 } from '@data/MarketingPage';
@@ -46,6 +48,8 @@ export const MarketingPage = () => {
           tabs={PromotionMethodsData.tabs}
         />
       )}
+
+      <StackShowcase data={MarketingStackData} />
     </SContainer>
   );
 };
