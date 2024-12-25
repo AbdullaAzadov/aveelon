@@ -10,5 +10,8 @@ export * from './ImageWithGlow';
 export * from './Button';
 export * from './Card';
 export * from './Tab/index';
+export * from './ProcessSteps';
+export * from './ProcessCarousel';
+export * from './ImageStack';
 
-export * from '../pages/HeroSection';
+export * from '@pages/index';

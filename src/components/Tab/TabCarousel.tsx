@@ -130,9 +130,9 @@ const StyledWrapper = styled.div`
     display: flex;
     gap: 2rem;
     width: 90vw;
+    margin-bottom: 1.25rem;
     overflow-y: hidden;
     overflow-x: scroll;
-    margin-bottom: 1.25rem;
     scrollbar-width: none;
     scroll-snap-type: x mandatory;
   }

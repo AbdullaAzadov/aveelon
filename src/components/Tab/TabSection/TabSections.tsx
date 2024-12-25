@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { TabSectionItem } from './TabSectionItem';
+import clsx from 'clsx';
 
 interface TabSectionsProps extends React.HTMLAttributes<HTMLDivElement> {
   sections: string[];
@@ -22,6 +23,7 @@ export const TabSections: React.FC<TabSectionsProps> = ({
           onClick={() => onSelectSection(index)}
           active={index === selectedIndex}
           size={size}
+          className={clsx('tab-section', size)}
         >
           {section}
         </TabSectionItem>
@@ -35,4 +37,8 @@ const SContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 1.25rem;
+
+  &.l {
+    gap: 3.75rem;
+  }
 `;

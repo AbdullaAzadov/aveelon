@@ -1,8 +1,10 @@
 import { PageHeroSectionProps } from '@pages/HeroSection';
 import { ITabBarProps } from '@components/Tab/TabBar';
 import img_hero from '@assets/images/computer-solutions.png';
-import img_portfolio_iphone from '@assets/images/portfolio-iphone.png';
-import img_portfolio_iphone_mobile from '@assets/images/portfolio-iphone-2.png';
+import img_portfolio_iphone_1 from '@assets/images/portfolio-iphone-1.png';
+import img_portfolio_iphone_2 from '@assets/images/portfolio-iphone-2.png';
+import img_portfolio_iphone_3 from '@assets/images/portfolio-iphone-3.png';
+import img_portfolio_iphone_mobile from '@assets/images/portfolio-iphone-mobile.png';
 import * as icons from '@components/icons/MainPage/index';
 
 export const MainPageHeroData: PageHeroSectionProps = {
@@ -180,6 +182,10 @@ export const PortfolioData = {
     'portfolio-highlight-paragraph-2',
     'portfolio-highlight-paragraph-3',
   ],
-  imageSrc: img_portfolio_iphone,
+  imageSrc: [
+    img_portfolio_iphone_1,
+    img_portfolio_iphone_2,
+    img_portfolio_iphone_3,
+  ],
   imageMobileSrc: img_portfolio_iphone_mobile,
 };

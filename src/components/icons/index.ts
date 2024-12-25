@@ -1,4 +1,5 @@
 export * from './MainPage/index';
+export * from './MarketingPage/index';
 export * from './ArrowDown';
 export * from './ArrowLeft';
 export * from './ArrowRight';
