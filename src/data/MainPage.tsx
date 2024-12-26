@@ -1,17 +1,12 @@
 import { PageHeroSectionProps } from '@pages/HeroSection';
 import { ITabBarProps } from '@components/Tab/TabBar';
-import img_hero from '@assets/images/computer-solutions.png';
-import img_portfolio_iphone_1 from '@assets/images/portfolio-iphone-1.png';
-import img_portfolio_iphone_2 from '@assets/images/portfolio-iphone-2.png';
-import img_portfolio_iphone_3 from '@assets/images/portfolio-iphone-3.png';
-import img_portfolio_iphone_mobile from '@assets/images/portfolio-iphone-mobile.png';
 import * as icons from '@components/icons/MainPage/index';
 
 export const MainPageHeroData: PageHeroSectionProps = {
   header: 'main-page-hero-header',
   paragraph: 'main-page-hero-paragraph',
   buttonText: 'leave-a-request',
-  imageSrc: img_hero,
+  imageSrc: '/images/computer-solutions.webp',
 };
 
 export const AboutUsData: ITabBarProps = {
@@ -183,9 +178,9 @@ export const PortfolioData = {
     'portfolio-highlight-paragraph-3',
   ],
   imageSrc: [
-    img_portfolio_iphone_1,
-    img_portfolio_iphone_2,
-    img_portfolio_iphone_3,
+    '/images/portfolio-iphone-1.webp',
+    '/images/portfolio-iphone-2.webp',
+    '/images/portfolio-iphone-3.webp',
   ],
-  imageMobileSrc: img_portfolio_iphone_mobile,
+  imageMobileSrc: '/images/portfolio-iphone-mobile.webp',
 };

@@ -1,5 +1,4 @@
 import { PageHeroSectionProps } from '@pages/HeroSection';
-import img_hero from '@assets/images/phone.png';
 import * as icons from '@components/icons/index';
 import { ITabBarProps } from '@components/Tab';
 import { IProcessStep } from './ProccesSteps';
@@ -9,7 +8,7 @@ export const ServicesPageHeroData: PageHeroSectionProps = {
   header: 'services-page-hero-header',
   paragraph: 'services-page-hero-paragraph',
   buttonText: 'leave-a-request',
-  imageSrc: img_hero,
+  imageSrc: '/images/phone.webp',
 };
 
 export const ITServicesData: ITabBarProps = {

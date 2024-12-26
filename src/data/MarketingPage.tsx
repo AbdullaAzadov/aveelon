@@ -1,6 +1,5 @@
 import { PageHeroSectionProps } from '@pages/HeroSection';
 import { IProcessStep } from './ProccesSteps';
-import img_hero from '@assets/images/connection.png';
 import * as icons from '@components/icons/index';
 import { ITabBarProps } from '@components/Tab';
 import { IStackShowcase } from './StackShowcase';
@@ -9,7 +8,7 @@ export const MarketingPageHeroData: PageHeroSectionProps = {
   header: 'marketing-page-hero-header',
   paragraph: 'marketing-page-hero-paragraph',
   buttonText: 'leave-a-request',
-  imageSrc: img_hero,
+  imageSrc: '/images/connection.webp',
 };
 
 export const MarketingServicesData: ITabBarProps = {
