@@ -12,6 +12,62 @@ export const MarketingPageHeroData: PageHeroSectionProps = {
   imageSrc: img_hero,
 };
 
+export const MarketingServicesData: ITabBarProps = {
+  header: 'marketing-services',
+  tabs: [
+    {
+      tabName: '',
+      card: [
+        {
+          icon: <icons.MarketingContentIcon />,
+          title: {
+            value: 'content-marketing',
+          },
+          body: {
+            value: 'content-marketing-desc',
+          },
+        },
+        {
+          icon: <icons.SEOIcon />,
+          title: {
+            value: 'seo-optimization',
+          },
+          body: {
+            value: 'seo-optimization-desc',
+          },
+        },
+        {
+          icon: <icons.SMMIcon />,
+          title: {
+            value: 'socials-and-smm',
+          },
+          body: {
+            value: 'socials-and-smm-desc',
+          },
+        },
+        {
+          icon: <icons.EmailMarketingIcon />,
+          title: {
+            value: 'email-marketing',
+          },
+          body: {
+            value: 'email-marketing-desc',
+          },
+        },
+        {
+          icon: <icons.AnalyzeMarketingIcon />,
+          title: {
+            value: 'analyzing-and-optimization-marketing',
+          },
+          body: {
+            value: 'analyzing-and-optimization-marketing-desc',
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export const MarkettingProcessData: IProcessStep[] = [
   {
     tabName: 'research-and-planning',

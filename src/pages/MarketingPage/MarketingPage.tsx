@@ -8,6 +8,7 @@ import {
 } from '@components/index';
 import {
   MarketingPageHeroData as HeroData,
+  MarketingServicesData,
   MarketingStackData,
   MarkettingProcessData,
   PromotionMethodsData,
@@ -25,6 +26,17 @@ export const MarketingPage = () => {
         imageSrc={HeroData.imageSrc}
         buttonText={HeroData.buttonText}
       />
+      {isMobile ? (
+        <TabCarousel
+          header={MarketingServicesData.header}
+          tabs={MarketingServicesData.tabs}
+        />
+      ) : (
+        <TabBar
+          header={MarketingServicesData.header}
+          tabs={MarketingServicesData.tabs}
+        />
+      )}
       {isMobile ? (
         <ProcessCarousel
           data={MarkettingProcessData}
