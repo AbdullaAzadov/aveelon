@@ -7,7 +7,7 @@ export function KotlinIcon() {
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g clip-path='url(#clip0_940_8530)'>
+      <g clipPath='url(#clip0_940_8530)'>
         <path
           d='M0 64.0002L32.1067 31.8936L64 64.0002H0Z'
           fill='url(#paint0_linear_940_8530)'

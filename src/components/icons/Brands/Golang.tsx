@@ -7,7 +7,7 @@ export function GolangIcon() {
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g clip-path='url(#clip0_940_8468)'>
+      <g clipPath='url(#clip0_940_8468)'>
         <path
           d='M59.5 0H10.5C4.70101 0 0 4.70101 0 10.5V59.5C0 65.299 4.70101 70 10.5 70H59.5C65.299 70 70 65.299 70 59.5V10.5C70 4.70101 65.299 0 59.5 0Z'
           fill='white'

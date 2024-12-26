@@ -22,7 +22,13 @@ const router = createBrowserRouter([
       },
       {
         path: RouteNames.PORTFOLIO.INDEX,
-        element: <h1>Portfolio</h1>,
+        element: <Pages.PortfolioPage />,
+        children: [
+          {
+            path: ':id',
+            element: <Pages.PortfolioPage />,
+          },
+        ],
       },
       {
         path: RouteNames.PUBLIC_OFFER,

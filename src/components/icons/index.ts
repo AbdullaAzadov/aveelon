@@ -10,3 +10,4 @@ export * from './Burger';
 export * from './Close';
 export * from './Whatsapp';
 export * from './Telegram';
+export * from './ProjectMockUp'

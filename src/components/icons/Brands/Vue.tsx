@@ -7,7 +7,7 @@ export function VueIcon() {
       fill='none'
       xmlns='http://www.w3.org/2000/svg'
     >
-      <g clip-path='url(#clip0_940_7882)'>
+      <g clipPath='url(#clip0_940_7882)'>
         <path
           fillRule='evenodd'
           clipRule='evenodd'
