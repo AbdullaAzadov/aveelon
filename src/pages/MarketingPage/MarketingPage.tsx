@@ -27,38 +27,35 @@ export const MarketingPage = () => {
         buttonText={HeroData.buttonText}
       />
       {isMobile ? (
-        <TabCarousel
-          header={MarketingServicesData.header}
-          tabs={MarketingServicesData.tabs}
-        />
+        <>
+          <TabCarousel
+            header={MarketingServicesData.header}
+            tabs={MarketingServicesData.tabs}
+          />
+          <ProcessCarousel
+            data={MarkettingProcessData}
+            sectionHeader='marketing-process'
+          />
+          <TabCarousel
+            header={PromotionMethodsData.header}
+            tabs={PromotionMethodsData.tabs}
+          />
+        </>
       ) : (
-        <TabBar
-          header={MarketingServicesData.header}
-          tabs={MarketingServicesData.tabs}
-        />
-      )}
-      {isMobile ? (
-        <ProcessCarousel
-          data={MarkettingProcessData}
-          sectionHeader='marketing-process'
-        />
-      ) : (
-        <ProcessSteps
-          data={MarkettingProcessData}
-          sectionHeader='marketing-process'
-        />
-      )}
-
-      {isMobile ? (
-        <TabCarousel
-          header={PromotionMethodsData.header}
-          tabs={PromotionMethodsData.tabs}
-        />
-      ) : (
-        <TabBar
-          header={PromotionMethodsData.header}
-          tabs={PromotionMethodsData.tabs}
-        />
+        <>
+          <TabBar
+            header={MarketingServicesData.header}
+            tabs={MarketingServicesData.tabs}
+          />
+          <ProcessSteps
+            data={MarkettingProcessData}
+            sectionHeader='marketing-process'
+          />
+          <TabBar
+            header={PromotionMethodsData.header}
+            tabs={PromotionMethodsData.tabs}
+          />
+        </>
       )}
 
       <StackShowcase data={MarketingStackData} />
