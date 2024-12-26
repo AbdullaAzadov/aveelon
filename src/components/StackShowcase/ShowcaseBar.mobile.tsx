@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { ShowcaseBarTab } from '@components/index';
+import { ArrowLeftIcon, ArrowRightIcon, Text } from '@components/index';
 import { IStackTab } from '@data/StackShowcase';
 import { ShowcaseBarItems } from './ShowcaseBarItems';
+import { useTranslation } from 'react-i18next';
 
 type props = {
   data: IStackTab[];
@@ -10,19 +11,28 @@ type props = {
 
 export const ShowcaseBarMobile = ({ data }: props) => {
   const [activeTab, setActiveTab] = useState(0);
+  const { t } = useTranslation();
+
+  const handleIncrease = () =>
+    setActiveTab((v) => (v + 1 >= data.length ? 0 : v + 1));
+
+  const handleDecrease = () =>
+    setActiveTab((v) => (v - 1 < 0 ? data.length - 1 : v - 1));
 
   return (
     <SContainer>
       <div className='panel'>
-        {data.map((item, index) => (
-          <ShowcaseBarTab
-            key={index}
-            isActive={activeTab === index}
-            onClick={() => setActiveTab(index)}
-          >
-            {item.title}
-          </ShowcaseBarTab>
-        ))}
+        {data.length > 1 && (
+          <div onClick={handleDecrease}>
+            <ArrowLeftIcon />
+          </div>
+        )}
+        <Text as='h3'>{t(data[activeTab].title || '')}</Text>
+        {data.length > 1 && (
+          <div onClick={handleIncrease}>
+            <ArrowRightIcon />
+          </div>
+        )}
       </div>
       <div className='content'>
         {data[activeTab].tab.map((item, index) => (
@@ -45,10 +55,19 @@ const SContainer = styled.div`
     background-color: ${(p) => p.theme.colors.gray};
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+
+    svg {
+      cursor: pointer;
+      width: 1rem;
+      height: 1rem;
+
+      &:hover path {
+        stroke: ${(p) => p.theme.colors.brand};
+      }
+    }
   }
 
   .content {
-    flex: 0.725;
     background-color: ${(p) => p.theme.colors.grayLight};
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
@@ -56,6 +75,7 @@ const SContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: stretch;
     gap: 1.25rem;
     padding: 1.25rem 0;
   }

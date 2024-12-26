@@ -36,7 +36,7 @@ export const ShowcaseBar = ({ data }: props) => {
 };
 
 const SContainer = styled.div`
-  height: clamp(31.25rem, 25vw + 11.25rem, 41.25rem);
+  height: 41.25rem;
   border-radius: 2rem;
   display: flex;
 
@@ -61,11 +61,15 @@ const SContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    overflow-y: auto;
+    overflow-y: hidden;
   }
 
   .content-items {
     margin: 1rem auto;
     width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 `;

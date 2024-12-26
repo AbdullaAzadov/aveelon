@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ScreenContext } from './ScreenContext';
+import { getCurrentScreen } from '@utils/screen';
 
 export const ScreenProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -17,17 +18,7 @@ export const ScreenProvider: React.FC<{ children: React.ReactNode }> = ({
     };
   }, []);
 
-  const value = useMemo(
-    () => ({
-      isDesktop: windowWidth > 1280,
-      isTablet: windowWidth <= 1280 && windowWidth > 768,
-      isMobile: windowWidth <= 768,
-      isSmallMobile: windowWidth <= 480,
-      isUltraSmall: windowWidth <= 375,
-      windowWidth,
-    }),
-    [windowWidth]
-  );
+  const value = useMemo(() => getCurrentScreen(), [windowWidth]);
 
   return (
     <ScreenContext.Provider value={value}>{children}</ScreenContext.Provider>

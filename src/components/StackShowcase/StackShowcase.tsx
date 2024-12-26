@@ -11,15 +11,16 @@ type props = {
 
 export const StackShowcase = ({ data }: props) => {
   const { t } = useTranslation();
-  const { isDesktop } = useScreenType();
+  const { isLessThanWideTablet } = useScreenType();
+
   return (
     <SContainer>
       <Text as='h1' className='header'>
         {t(data.title)}
       </Text>
       <Text className='desc'>{t(data.desc)}</Text>
-      {isDesktop && <ShowcaseBar data={data.stack} />}
-      {!isDesktop && <ShowcaseBarMobile data={data.stack} />}
+      {isLessThanWideTablet && <ShowcaseBarMobile data={data.stack} />}
+      {!isLessThanWideTablet && <ShowcaseBar data={data.stack} />}
     </SContainer>
   );
 };

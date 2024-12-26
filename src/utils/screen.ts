@@ -8,6 +8,7 @@ export const getCurrentScreen = (): TScreenType => {
     isMobile: windowWidth <= 768,
     isSmallMobile: windowWidth <= 480,
     isUltraSmall: windowWidth <= 375,
+    isLessThanWideTablet: windowWidth <= 1024,
     windowWidth,
   };
 };

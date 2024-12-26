@@ -56,6 +56,49 @@ const Container = styled.div`
       gap: 1rem;
       background-color: #292c2e;
       border-radius: 0.5rem;
+
+      ${({ theme }) => media.lessThan(theme, 'tablet')} {
+        min-height: 4rem;
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+      ${({ theme }) => media.lessThan(theme, 'smallMobile')} {
+        min-height: 3.25rem;
+        gap: 0.125rem;
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+      }
+    }
+  }
+
+  ${({ theme }) => media.lessThan(theme, 'wideTablet')} {
+    padding: 0 1rem;
+    width: 90%;
+    .text {
+      margin-bottom: 1.25rem;
+    }
+
+    .items {
+      width: 95%;
+      justify-content: center;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  ${({ theme }) => media.lessThan(theme, 'tablet')} {
+    padding: 0 0.125rem;
+    .items {
+      gap: 0.25rem;
+    }
+  }
+  ${({ theme }) => media.lessThan(theme, 'smallMobile')} {
+    padding: 0;
+    .items {
+      gap: 0.125rem;
     }
   }
 `;
