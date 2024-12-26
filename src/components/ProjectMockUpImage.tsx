@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import { ProjectMockupIcon } from '@components/index';
 
 interface ProjectMockUpImageProps {
   mobileSrc: string;
@@ -18,7 +17,7 @@ export const ProjectMockUpImage: FC<ProjectMockUpImageProps> = ({
       <img src={mobileSrc} loading='lazy' className='s' />
       <img src={desktopSrc} loading='lazy' className='l' />
       <img src={tabletSrc} loading='lazy' className='m' />
-      <ProjectMockupIcon />
+      <div className='bg' />
     </StyledContainer>
   );
 };
@@ -26,6 +25,16 @@ export const ProjectMockUpImage: FC<ProjectMockUpImageProps> = ({
 const StyledContainer = styled.div`
   position: relative;
   width: 100%;
+
+  .bg {
+    height: 24rem;
+    border-radius: 0.625rem;
+    background: linear-gradient(
+      180deg,
+      rgba(230, 21, 45, 0.7) 0%,
+      rgba(35, 31, 32, 0.7) 100%
+    );
+  }
 
   svg {
     width: 100%;
