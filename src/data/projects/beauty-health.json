@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "/images/projects/startlivingright-net.webp",
+    "name": "Startlivingright.net",
+    "desc": "startlivingright-net-desc",
+    "category": "beauty-health"
+  },
+  {
+    "id": 2,
+    "imageSrc": "/images/projects/startlivingright-com.webp",
+    "name": "Startlivingright.com",
+    "desc": "startlivingright-com-desc",
+    "category": "beauty-health"
+  },
+  {
+    "id": 3,
+    "imageSrc": "/images/projects/organics-millets.webp",
+    "name": "Organics Millets",
+    "desc": "organics-millets-desc",
+    "category": "beauty-health"
+  },
+  {
+    "id": 4,
+    "imageSrc": "/images/projects/honey.webp",
+    "name": "Honey",
+    "desc": "honey-desc",
+    "category": "beauty-health"
+  }
+]

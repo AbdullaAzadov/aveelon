@@ -13,11 +13,7 @@ export const ProjectsListItem: FC<Tprops> = ({ item }) => {
   const { t } = useTranslation();
   return (
     <Container>
-      <ProjectMockUpImage
-        mobileSrc={item.imgSrc.mobile}
-        tabletSrc={item.imgSrc.tablet}
-        desktopSrc={item.imgSrc.desktop}
-      />
+      <ProjectMockUpImage src={item.imageSrc} />
       <div>
         <Text as='h2' color='brand' className='title'>
           {t(item.name)}

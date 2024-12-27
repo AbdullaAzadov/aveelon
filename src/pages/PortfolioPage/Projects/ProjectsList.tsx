@@ -1,12 +1,17 @@
 import styled from 'styled-components';
 import { ProjectsListItem } from './../index';
 import { media } from '@utils/style-helpers';
-import { ProjectsBusinessListData } from '@data/ProtfolioPage';
+import React from 'react';
+import { IProjectListItem } from '@data/ProtfolioPage';
 
-export const ProjectsList = () => {
+type Tprops = {
+  projects: IProjectListItem[];
+};
+
+export const ProjectsList: React.FC<Tprops> = ({ projects }) => {
   return (
     <Container>
-      {ProjectsBusinessListData.map((item, index) => (
+      {projects.map((item, index) => (
         <ProjectsListItem key={index} item={item} />
       ))}
     </Container>

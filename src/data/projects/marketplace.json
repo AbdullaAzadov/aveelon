@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "/images/projects/open-sooq.webp",
+    "name": "OpenSooq",
+    "desc": "open-sooq-desc",
+    "category": "marketplace"
+  },
+  {
+    "id": 2,
+    "imageSrc": "/images/projects/konga.webp",
+    "name": "Konga",
+    "desc": "konga-desc",
+    "category": "marketplace"
+  },
+  {
+    "id": 3,
+    "imageSrc": "/images/projects/iq-cars.webp",
+    "name": "IQCars",
+    "desc": "iq-cars-desc",
+    "category": "marketplace"
+  },
+  {
+    "id": 4,
+    "imageSrc": "/images/projects/cities-store.webp",
+    "name": "Cities Store",
+    "desc": "cities-store-desc",
+    "category": "marketplace"
+  }
+]

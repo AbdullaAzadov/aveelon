@@ -2,38 +2,40 @@ import { FC } from 'react';
 import styled from 'styled-components';
 
 interface ProjectMockUpImageProps {
-  mobileSrc: string;
-  tabletSrc: string;
-  desktopSrc: string;
+  src: string;
+  usage?: 'list' | 'details';
 }
 
 export const ProjectMockUpImage: FC<ProjectMockUpImageProps> = ({
-  mobileSrc,
-  tabletSrc,
-  desktopSrc,
+  src,
+  usage = 'list',
 }) => {
   return (
-    <StyledContainer>
-      <img src={mobileSrc} loading='lazy' className='s' />
-      <img src={desktopSrc} loading='lazy' className='l' />
-      <img src={tabletSrc} loading='lazy' className='m' />
+    <StyledContainer className={usage}>
+      <img src={src} loading='lazy' className='image' />
       <div className='bg' />
     </StyledContainer>
   );
 };
 
 const StyledContainer = styled.div`
-  position: relative;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    180deg,
+    rgba(230, 21, 45, 0.7) 0%,
+    rgba(35, 31, 32, 0.7) 100%
+  );
 
-  .bg {
-    height: 24rem;
+  &.list {
     border-radius: 0.625rem;
-    background: linear-gradient(
-      180deg,
-      rgba(230, 21, 45, 0.7) 0%,
-      rgba(35, 31, 32, 0.7) 100%
-    );
+    padding: 4.875rem 0;
+  }
+  &.details {
+    border-radius: 1.25rem;
   }
 
   svg {
@@ -41,22 +43,7 @@ const StyledContainer = styled.div`
     height: 100%;
   }
 
-  img {
-    position: absolute;
-  }
-  .s {
-    width: 11%;
-    top: 33.33%;
-    left: 4.5%;
-  }
-  .m {
-    width: 22%;
-    left: 73.67%;
-    top: 27.5%;
-  }
-  .l {
-    width: 67.33%;
-    left: 11.25%;
-    top: 22%;
+  .image {
+    width: 90%;
   }
 `;

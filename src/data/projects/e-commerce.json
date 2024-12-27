@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "/images/projects/ziskejte.webp",
+    "name": "Ziskejte.cz",
+    "desc": "ziskejte-desc",
+    "category": "e-commerce"
+  },
+  {
+    "id": 2,
+    "imageSrc": "/images/projects/grocery.webp",
+    "name": "GROCERY",
+    "desc": "grocery-desc",
+    "category": "e-commerce"
+  },
+  {
+    "id": 3,
+    "imageSrc": "/images/projects/elitestore.webp",
+    "name": "Elitestore",
+    "desc": "elitestore-desc",
+    "category": "e-commerce"
+  },
+  {
+    "id": 4,
+    "imageSrc": "/images/projects/zahar.webp",
+    "name": "Zahar",
+    "desc": "zahar-desc",
+    "category": "e-commerce"
+  }
+]

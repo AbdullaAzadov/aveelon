@@ -42,14 +42,22 @@ const StyledDefault = styled.div`
   justify-content: center;
   align-items: center;
 
-  &.s:not(.active),
-  &.m:not(.active),
-  &.l:not(.active) {
-    border-color: ${(p) => p.theme.colors.white};
+  &.s,
+  &.m,
+  &.l {
+    &:not(.active) {
+      border-color: ${(p) => p.theme.colors.white};
+    }
+    &.no-outline {
+      border-color: transparent;
+    }
   }
 
   &.s {
     padding: 0.375rem 0.5rem;
+    .text {
+      text-wrap: nowrap;
+    }
   }
 
   &.m {
@@ -71,7 +79,7 @@ const StyledDefault = styled.div`
     }
   }
 
-  &:hover:not(.active) {
+  &:hover:not(.active, .no-outline) {
     background-color: transparent;
     border-color: ${(p) => p.theme.colors.brand};
   }

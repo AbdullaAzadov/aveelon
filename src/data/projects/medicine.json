@@ -1,0 +1,9 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "/images/projects/tanzmed.webp",
+    "name": "Tanzmed",
+    "desc": "tanzmed-desc",
+    "category": "medicine"
+  }
+]

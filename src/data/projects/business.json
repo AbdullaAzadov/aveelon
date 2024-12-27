@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "/images/projects/sanedpartners.webp",
+    "name": "Sanedpartners",
+    "desc": "sanedpartners-desc",
+    "category": "business"
+  },
+  {
+    "id": 2,
+    "imageSrc": "/images/projects/cds-mc.webp",
+    "name": "CDS-MC",
+    "desc": "cds-mc-desc",
+    "category": "business"
+  },
+  {
+    "id": 3,
+    "imageSrc": "/images/projects/rootsgroupuk.webp",
+    "name": "Rootsgroupuk",
+    "desc": "rootsgroupuk-desc",
+    "category": "business"
+  },
+  {
+    "id": 4,
+    "imageSrc": "/images/projects/reisebuero-schwarz.webp",
+    "name": "Reisebuero-schwarz",
+    "desc": "reisebuero-schwarz-desc",
+    "category": "business"
+  },
+  {
+    "id": 5,
+    "imageSrc": "/images/projects/exact.webp",
+    "name": "Exact",
+    "desc": "exact-desc",
+    "category": "business"
+  },
+  {
+    "id": 6,
+    "imageSrc": "/images/projects/coldwell-rica.webp",
+    "name": "Coldwell Banker Costa Rica",
+    "desc": "coldwell-rica-desc",
+    "category": "business"
+  },
+  {
+    "id": 7,
+    "imageSrc": "/images/projects/coldwell-samara.webp",
+    "name": "Coldwell Banker Samara",
+    "desc": "coldwell-samara-desc",
+    "category": "business"
+  },
+  {
+    "id": 8,
+    "imageSrc": "/images/projects/coldwell-cr.webp",
+    "name": "Coldwell Banker CR",
+    "desc": "coldwell-cr-desc",
+    "category": "business"
+  },
+  {
+    "id": 9,
+    "imageSrc": "/images/projects/atticus.webp",
+    "name": "Atticus",
+    "desc": "atticus-desc",
+    "category": "business"
+  }
+]

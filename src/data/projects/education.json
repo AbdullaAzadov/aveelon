@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "imageSrc": "/images/projects/ustudy.webp",
+    "name": "Ustudy",
+    "desc": "ustudy-desc",
+    "category": "education"
+  },
+  {
+    "id": 2,
+    "imageSrc": "/images/projects/growth-in-motion.webp",
+    "name": "Growth in Motion",
+    "desc": "growth-desc",
+    "category": "education"
+  }
+]
