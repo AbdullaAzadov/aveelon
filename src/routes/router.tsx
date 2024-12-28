@@ -30,11 +30,11 @@ const router = createBrowserRouter([
       },
       {
         path: RouteNames.PUBLIC_OFFER,
-        element: <h1>Public Offer</h1>,
+        element: <Pages.OfferPage />,
       },
       {
         path: RouteNames.PRIVACY_POLICY,
-        element: <h1>Privacy Policy</h1>,
+        element: <Pages.PolicyPage />,
       },
       {
         path: '*',
