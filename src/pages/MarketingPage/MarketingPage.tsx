@@ -67,6 +67,6 @@ const SContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6.25rem;
-  margin-bottom: 6.25rem;
+  gap: clamp(4.25rem, 2.0915vw + 3.7402rem, 6.25rem);
+  margin-bottom: clamp(1.25rem, 5.2288vw + -0.0245rem, 6.25rem);
 `;

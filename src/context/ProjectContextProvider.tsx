@@ -2,7 +2,7 @@ import {
   IProjectListItem,
   ProjectsCategoriesData,
   TProjectCategories,
-} from '@data/ProtfolioPage';
+} from '@data/PortfolioPage';
 import { useState } from 'react';
 import { ProjectContext } from './ProjectContext';
 import { isObjInArr } from '@utils/array';

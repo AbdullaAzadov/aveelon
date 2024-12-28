@@ -13,12 +13,14 @@ export interface ITabBarProps {
   header: string;
   tabs: ITabBarContent[];
   cardSize?: 'small' | 'normal';
+  tabSize?: 's' | 'm';
 }
 
 export const TabBar: FC<ITabBarProps> = ({
   header,
   tabs,
   cardSize = 'normal',
+  tabSize = 'm',
 }) => {
   const tabSections = tabs
     .map((tab) => tab.tabName)
@@ -41,7 +43,7 @@ export const TabBar: FC<ITabBarProps> = ({
               sections={tabSections}
               selectedIndex={selectedIndex}
               onSelectSection={setSelectedIndex}
-              size='m'
+              size={tabSize}
             />
           </div>
         )}

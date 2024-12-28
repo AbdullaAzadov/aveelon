@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { ProjectsListItem } from './../index';
 import { media } from '@utils/style-helpers';
 import React from 'react';
-import { IProjectListItem } from '@data/ProtfolioPage';
+import { IProjectListItem } from '@data/PortfolioPage';
 
 type Tprops = {
   projects: IProjectListItem[];

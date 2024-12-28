@@ -8,7 +8,7 @@ import {
   ProjectMockUpImage,
   Text,
 } from '@components/index';
-import { IProjectListItem, TProjectCategories } from '@data/ProtfolioPage';
+import { IProjectListItem, TProjectCategories } from '@data/PortfolioPage';
 import { useProject } from '@hooks/useProject';
 import { media } from '@utils/style-helpers';
 import { useTranslation } from 'react-i18next';
@@ -74,6 +74,7 @@ const SWrapper = styled.div`
   display: grid;
   gap: 5rem;
   grid-template-columns: 65% 30%;
+  padding-bottom: clamp(3.125rem, 3.268vw + 2.3284rem, 6.25rem);
 
   ${({ theme }) => media.lessThan(theme, 'desktop')} {
     gap: 1.25rem;
@@ -87,7 +88,7 @@ const SWrapper = styled.div`
     ${({ theme }) => media.lessThan(theme, 'wideTablet')} {
       gap: 1rem;
       .desc {
-        max-height: 50vw;
+        max-height: 75vw;
       }
     }
   }

@@ -1,4 +1,4 @@
-import { IProjectListItem, TProjectCategories } from '@data/ProtfolioPage';
+import { IProjectListItem, TProjectCategories } from '@data/PortfolioPage';
 import { createContext } from 'react';
 
 export type TProjectContext = {

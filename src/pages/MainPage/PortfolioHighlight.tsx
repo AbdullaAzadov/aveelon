@@ -46,7 +46,7 @@ const SWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 9.5rem 0;
+  padding: clamp(1.25rem, 8.6275vw + -0.8529rem, 9.5rem) 0;
   .info {
     flex: 1;
     display: flex;

@@ -23,10 +23,13 @@ export const ImageWithGlow: FC<ImageWithGlowProps> = ({
 
 const SWrapper = styled.div`
   position: relative;
+  height: 100%;
 
   img {
     z-index: 10;
     width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 `;
 

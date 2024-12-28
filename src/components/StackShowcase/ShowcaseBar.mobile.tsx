@@ -1,38 +1,27 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import { ArrowLeftIcon, ArrowRightIcon, Text } from '@components/index';
 import { IStackTab } from '@data/StackShowcase';
 import { ShowcaseBarItems } from './ShowcaseBarItems';
-import { useTranslation } from 'react-i18next';
+import { TabSections } from '@components/index';
 
 type props = {
   data: IStackTab[];
 };
 
 export const ShowcaseBarMobile = ({ data }: props) => {
+  const sections = data.map((tab) => tab.title);
   const [activeTab, setActiveTab] = useState(0);
-  const { t } = useTranslation();
-
-  const handleIncrease = () =>
-    setActiveTab((v) => (v + 1 >= data.length ? 0 : v + 1));
-
-  const handleDecrease = () =>
-    setActiveTab((v) => (v - 1 < 0 ? data.length - 1 : v - 1));
 
   return (
     <SContainer>
       <div className='panel'>
-        {data.length > 1 && (
-          <div onClick={handleDecrease}>
-            <ArrowLeftIcon />
-          </div>
-        )}
-        <Text as='h3'>{t(data[activeTab].title || '')}</Text>
-        {data.length > 1 && (
-          <div onClick={handleIncrease}>
-            <ArrowRightIcon />
-          </div>
-        )}
+        <TabSections
+          sections={sections}
+          selectedIndex={activeTab}
+          onSelectSection={setActiveTab}
+          size={'s'}
+          outline={false}
+        />
       </div>
       <div className='content'>
         {data[activeTab].tab.map((item, index) => (
@@ -55,6 +44,7 @@ const SContainer = styled.div`
     background-color: ${(p) => p.theme.colors.gray};
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
+    padding: 0 1rem;
 
     svg {
       cursor: pointer;

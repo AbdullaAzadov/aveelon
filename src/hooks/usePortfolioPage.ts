@@ -5,7 +5,7 @@ import {
   IProjectListItem,
   ProjectsCategoriesData,
   TProjectCategories,
-} from '@data/ProtfolioPage';
+} from '@data/PortfolioPage';
 
 export const usePortfolioPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();

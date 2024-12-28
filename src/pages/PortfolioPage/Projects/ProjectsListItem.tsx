@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import { Button, Text, Skeleton, ProjectMockUpImage } from '@components/index';
-import { IProjectListItem } from '@data/ProtfolioPage';
+import { IProjectListItem } from '@data/PortfolioPage';
 import { RouteNames } from '@routes/RouteNames';
 import { scrollToTop } from '@utils/screen';
 

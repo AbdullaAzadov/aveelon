@@ -63,7 +63,7 @@ const SWrapper = styled.div`
 
   ${({ theme }) => media.lessThan(theme, 'tablet')} {
     flex-direction: column-reverse;
-    padding: 1.5rem 0 2.5rem;
+    padding: clamp(0rem, 1.5686vw + -0.3824rem, 1.5rem) 0 2.5rem;
 
     .right {
       padding-right: 0;

@@ -38,6 +38,7 @@ const SContainer = styled.div`
   }
 
   ${({ theme }) => media.lessThan(theme, 'desktop')} {
+    padding: clamp(1.25rem, 5.2288vw + -0.0245rem, 6.25rem) 0;
     .desc {
       margin-bottom: 1.875rem;
     }

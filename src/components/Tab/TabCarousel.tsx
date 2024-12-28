@@ -1,8 +1,7 @@
 import { FC, LegacyRef, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
-import { Card, TCardProps, Text } from '../index';
-import { ArrowLeftIcon, ArrowRightIcon } from '@components/icons';
+import { Card, TabSections, TCardProps, Text } from '../index';
 import clsx from 'clsx';
 
 export interface ITabCarouselContent {
@@ -14,12 +13,14 @@ export interface ITabCarouselProps {
   header: string;
   tabs: ITabCarouselContent[];
   cardSize?: 'small' | 'normal';
+  tabSize?: 's' | 'm';
 }
 
 export const TabCarousel: FC<ITabCarouselProps> = ({
   header,
   tabs,
   cardSize = 'normal',
+  tabSize = 's',
 }) => {
   const { t } = useTranslation();
   const [currentTabIndex, setCurrentTabIndex] = useState(0);
@@ -30,12 +31,6 @@ export const TabCarousel: FC<ITabCarouselProps> = ({
   const tabSections = tabs
     .map((tab) => tab.tabName)
     .filter((name): name is string => name !== undefined);
-
-  const handleIncreaseTab = () =>
-    setCurrentTabIndex((v) => (v + 1 >= tabs.length ? 0 : v + 1));
-
-  const handleDecreaseTab = () =>
-    setCurrentTabIndex((v) => (v - 1 < 0 ? tabs.length - 1 : v - 1));
 
   const handleScroll = (e: React.UIEvent<HTMLElement>) =>
     setCurrentCardIndex(
@@ -61,13 +56,12 @@ export const TabCarousel: FC<ITabCarouselProps> = ({
         </Text>
         {tabSections.length > 1 && (
           <div className='tabs'>
-            <div onClick={handleDecreaseTab}>
-              <ArrowLeftIcon />
-            </div>
-            <Text>{t(currentTab.tabName || '')}</Text>
-            <div onClick={handleIncreaseTab}>
-              <ArrowRightIcon />
-            </div>
+            <TabSections
+              sections={tabSections}
+              selectedIndex={currentTabIndex}
+              onSelectSection={setCurrentTabIndex}
+              size={tabSize}
+            />
           </div>
         )}
       </div>
