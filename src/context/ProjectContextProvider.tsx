@@ -20,13 +20,20 @@ export const ProjectProvider = ({
     id: string | number,
     category: TProjectCategories
   ): Promise<IProjectListItem | undefined> => {
+    const startTime = performance.now();
     // check cache for category and if it's not in cache, load
+    let res: IProjectListItem | undefined = undefined;
     if (!cache[category]) {
       const newCategory = await getProjectsByCategory(category);
-      return findProjectInCategory(id, newCategory);
+      res = findProjectInCategory(id, newCategory);
+    } else {
+      res = findProjectInCategory(id, cache[category]);
     }
 
-    return findProjectInCategory(id, cache[category]);
+    const elapsedTime = performance.now() - startTime;
+    const remainingDelay = Math.max(0, 150 - elapsedTime);
+    await new Promise((resolve) => setTimeout(resolve, remainingDelay)); // Исскуственная задержка
+    return res;
   };
 
   const findProjectInCategory = (
@@ -64,7 +71,7 @@ export const ProjectProvider = ({
       setCache((prev) => ({ ...prev, [category]: projects }));
 
       const elapsedTime = performance.now() - startTime;
-      const remainingDelay = Math.max(0, 300 - elapsedTime);
+      const remainingDelay = Math.max(0, 200 - elapsedTime);
       await new Promise((resolve) => setTimeout(resolve, remainingDelay)); // Исскуственная задержка
 
       return projects;
