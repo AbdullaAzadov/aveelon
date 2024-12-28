@@ -6,6 +6,7 @@ import {
   BackSection,
   Button,
   ProjectMockUpImage,
+  Skeleton,
   Text,
 } from '@components/index';
 import { IProjectListItem, TProjectCategories } from '@data/PortfolioPage';
@@ -30,7 +31,15 @@ export const ProjectPage = () => {
     });
   }, [id, category]);
 
-  if (!project) return null;
+  if (!project)
+    return (
+      <BackSection>
+        <SWrapper className='skeleton'>
+          <Skeleton>1</Skeleton>
+          <Skeleton>1</Skeleton>
+        </SWrapper>
+      </BackSection>
+    );
 
   return (
     <BackSection>
@@ -79,6 +88,10 @@ const SWrapper = styled.div`
   ${({ theme }) => media.lessThan(theme, 'desktop')} {
     gap: 1.25rem;
     grid-template-columns: 100%;
+  }
+
+  &.skeleton {
+    min-height: 60vh;
   }
 
   .details {
