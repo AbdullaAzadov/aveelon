@@ -15,7 +15,7 @@ export const PortfolioHighlight = () => {
 
   const handleClick = () => {
     scrollToTop();
-    nav(RouteNames.PORTFOLIO.INDEX);
+    nav(RouteNames.PORTFOLIO);
   };
 
   return (

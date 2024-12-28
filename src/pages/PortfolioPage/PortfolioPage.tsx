@@ -1,27 +1,18 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import { useProject } from '@hooks/useProject';
 import { ProjectsList, TabSections } from '@components/index';
-import { IProjectListItem, ProjectsCategoriesData } from '@data/ProtfolioPage';
+import { ProjectsCategoriesData } from '@data/ProtfolioPage';
+import { usePortfolioPage } from '@hooks/usePortfolioPage';
 
 export const PortfolioPage = () => {
-  const [selectedTabIndex, setSelectedTabIndex] = useState<number>(0);
-  const category = ProjectsCategoriesData[selectedTabIndex];
-
-  const { getProjectsByCategory, isLoading } = useProject();
-  const [projects, setProjects] = useState<IProjectListItem[]>([]);
-
-  useEffect(() => {
-    getProjectsByCategory(category).then((data) => setProjects(data));
-  }, [category, getProjectsByCategory]);
-
+  const { selectedIndex, projects, isLoading, onChangeCategory } =
+    usePortfolioPage();
   return (
     <SContainer>
       <TabSections
         sections={ProjectsCategoriesData}
-        selectedIndex={selectedTabIndex}
-        onSelectSection={setSelectedTabIndex}
+        selectedIndex={selectedIndex}
+        onSelectSection={onChangeCategory}
         size='s'
         outline={false}
       />

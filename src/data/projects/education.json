@@ -1,16 +1,22 @@
 [
   {
-    "id": 1,
+    "id": "ustudy",
     "imageSrc": "/images/projects/ustudy.webp",
     "name": "Ustudy",
     "desc": "ustudy-desc",
-    "category": "education"
+    "category": "education",
+    "website": "https://ustudy.kz",
+    "android": "https://ustudy.kz",
+    "ios": "https://ustudy.kz"
   },
   {
-    "id": 2,
+    "id": "growth-in-motion",
     "imageSrc": "/images/projects/growth-in-motion.webp",
     "name": "Growth in Motion",
     "desc": "growth-desc",
-    "category": "education"
+    "category": "education",
+    "website": "https://growthinmotion.co.za",
+    "android": "",
+    "ios": ""
   }
 ]

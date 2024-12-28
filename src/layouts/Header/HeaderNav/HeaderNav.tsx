@@ -3,11 +3,15 @@ import { HeaderNavItem } from './HeaderNavItem';
 import styled from 'styled-components';
 import { media } from '@utils/style-helpers';
 
-export const HeaderNav = () => {
+export const HeaderNav = ({
+  onNavigate = () => {},
+}: {
+  onNavigate?: () => void;
+}) => {
   return (
     <StyledWrapper>
       {headerLinks.map((link) => (
-        <HeaderNavItem key={link.name} data={link} />
+        <HeaderNavItem key={link.name} data={link} onNavigate={onNavigate} />
       ))}
     </StyledWrapper>
   );

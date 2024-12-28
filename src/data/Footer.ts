@@ -20,7 +20,7 @@ export const footerLinks: IFooterLinkSection[] = [
   },
   {
     header: 'our-works',
-    links: [{ name: 'portfolio', link: RouteNames.PORTFOLIO.INDEX }],
+    links: [{ name: 'portfolio', link: RouteNames.PORTFOLIO }],
   },
   {
     header: 'information',

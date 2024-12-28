@@ -24,7 +24,7 @@ export const FooterLinkItemMobile = ({
         title={<Text as='h3'>{t(header)}</Text>}
       >
         {links.map((item, index) => (
-          <Link to={item.link} key={index}>
+          <Link to={item.link} key={index} onClick={scrollToTop}>
             <Text as='p'>{t(item.name)}</Text>
           </Link>
         ))}

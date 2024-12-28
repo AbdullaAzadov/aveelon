@@ -17,7 +17,9 @@ export const Header = () => {
           <HeaderActionsMobile setIsShow={setShowBurger} isShow={showBurger} />
         )}
       </StyledHeaderWrapper>
-      {isMobile && showBurger && <HeaderBurger />}
+      {isMobile && showBurger && (
+        <HeaderBurger onNavigate={() => setShowBurger(false)} />
+      )}
     </>
   );
 };

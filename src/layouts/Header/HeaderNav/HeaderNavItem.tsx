@@ -5,17 +5,28 @@ import { IHeaderLink } from '@data/Header';
 import { Text } from '@components/index';
 import { useNavigate } from 'react-router-dom';
 import { media } from '@utils/style-helpers';
+import { scrollToTop } from '@utils/screen';
 
 type HeaderNavProps = {
   data: IHeaderLink;
+  onNavigate?: () => void;
 };
 
-export const HeaderNavItem: FC<HeaderNavProps> = ({ data }) => {
+export const HeaderNavItem: FC<HeaderNavProps> = ({
+  data,
+  onNavigate = () => {},
+}) => {
   const { t } = useTranslation();
   const nav = useNavigate();
 
+  const handleClick = () => {
+    scrollToTop();
+    nav(data.link);
+    onNavigate();
+  };
+
   return (
-    <StyledWrapper onClick={() => nav(data.link)}>
+    <StyledWrapper onClick={handleClick}>
       <Text as='p' className='text'>
         {t(data.name)}
       </Text>

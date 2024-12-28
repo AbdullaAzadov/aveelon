@@ -4,6 +4,9 @@ export interface IProjectListItem {
   name: string;
   desc: string;
   category: TProjectCategories;
+  website?: string;
+  android?: string;
+  ios?: string;
 }
 
 export type TProjectCategories =

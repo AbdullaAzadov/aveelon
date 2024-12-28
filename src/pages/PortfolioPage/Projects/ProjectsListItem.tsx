@@ -5,6 +5,9 @@ import { IProjectListItem } from '@data/ProtfolioPage';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { CSS_Skeleton } from '@components/css/skeleton';
+import { useNavigate } from 'react-router-dom';
+import { RouteNames } from '@routes/RouteNames';
+import { scrollToTop } from '@utils/screen';
 
 type Tprops = {
   item: IProjectListItem;
@@ -13,6 +16,12 @@ type Tprops = {
 
 export const ProjectsListItem: FC<Tprops> = ({ item, isLoading }) => {
   const { t } = useTranslation();
+  const nav = useNavigate();
+
+  const onClick = () => {
+    nav(`${RouteNames.PROJECT}${item.category}/${item.id}`);
+    scrollToTop();
+  };
 
   if (isLoading) {
     return (
@@ -49,7 +58,7 @@ export const ProjectsListItem: FC<Tprops> = ({ item, isLoading }) => {
         <Text className='desc'> {t(item.desc)}</Text>
       </div>
       <div className='btn'>
-        <Button variant='secondary' className='btn'>
+        <Button variant='secondary' className='btn' onClick={onClick}>
           {t('details')}
         </Button>
       </div>

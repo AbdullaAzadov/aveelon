@@ -13,6 +13,7 @@ export * from './Tab/index';
 export * from './ProcessSteps';
 export * from './ProcessCarousel';
 export * from './ImageStack';
+export * from './ProjectMockUpImage';
 
 export * from './StackShowcase/index';
 export * from './icons/index';

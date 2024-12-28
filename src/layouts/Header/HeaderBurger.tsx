@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import { HeaderNav } from './index';
 
-export const HeaderBurger = () => {
+export const HeaderBurger = ({ onNavigate }: { onNavigate: () => void }) => {
   return (
     <StyledWrapper>
-      <HeaderNav />
+      <HeaderNav onNavigate={onNavigate} />
     </StyledWrapper>
   );
 };

@@ -1,6 +1,7 @@
 import { Text } from '@components/Text';
 import { IFooterLinkItem } from '@data/Footer';
 import { useScreenType } from '@hooks/useScreenType';
+import { scrollToTop } from '@utils/screen';
 import { media } from '@utils/style-helpers';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -23,7 +24,7 @@ export const FooterLinkItem = ({
         {t(header)}
       </Text>
       {links.map((item, index) => (
-        <Link to={item.link} key={index}>
+        <Link to={item.link} key={index} onClick={scrollToTop}>
           <Text as={isUltraSmall ? 'h4' : 'p'}>{t(item.name)}</Text>
         </Link>
       ))}

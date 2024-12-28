@@ -1,6 +1,11 @@
-import { IProjectListItem } from '@data/ProtfolioPage';
+import {
+  IProjectListItem,
+  ProjectsCategoriesData,
+  TProjectCategories,
+} from '@data/ProtfolioPage';
 import { useState } from 'react';
 import { ProjectContext } from './ProjectContext';
+import { isObjInArr } from '@utils/array';
 
 export const ProjectProvider = ({
   children,
@@ -11,13 +16,44 @@ export const ProjectProvider = ({
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const getProjectById = async (
+    id: string | number,
+    category: TProjectCategories
+  ): Promise<IProjectListItem | undefined> => {
+    // check cache for category and if it's not in cache, load
+    if (!cache[category]) {
+      const newCategory = await getProjectsByCategory(category);
+      return findProjectInCategory(id, newCategory);
+    }
+
+    return findProjectInCategory(id, cache[category]);
+  };
+
+  const findProjectInCategory = (
+    id: string | number,
+    data: IProjectListItem[]
+  ): IProjectListItem | undefined => {
+    return data?.find((p) => p.id === id);
+  };
+
   const getProjectsByCategory = async (
     category: string
   ): Promise<IProjectListItem[]> => {
+    // check cache
+
     if (cache[category]) {
       return cache[category];
     }
+    // if category is valid and not in cache, load
+    if (isObjInArr(category, ProjectsCategoriesData))
+      return await fetchCategory(category as TProjectCategories);
+    const defaultCategory = ProjectsCategoriesData[0];
+    const defaultData = cache[defaultCategory];
+    if (defaultData) return defaultData;
+    return await fetchCategory(defaultCategory as TProjectCategories);
+  };
 
+  const fetchCategory = async (category: TProjectCategories) => {
     setIsLoading(true);
     setError(null);
 
@@ -43,7 +79,13 @@ export const ProjectProvider = ({
 
   return (
     <ProjectContext.Provider
-      value={{ projects: cache, getProjectsByCategory, isLoading, error }}
+      value={{
+        projects: cache,
+        getProjectsByCategory,
+        getProjectById,
+        isLoading,
+        error,
+      }}
     >
       {children}
     </ProjectContext.Provider>
