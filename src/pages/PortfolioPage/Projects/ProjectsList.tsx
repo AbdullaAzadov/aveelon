@@ -6,13 +6,16 @@ import { IProjectListItem } from '@data/ProtfolioPage';
 
 type Tprops = {
   projects: IProjectListItem[];
+  isLoading: boolean;
 };
 
-export const ProjectsList: React.FC<Tprops> = ({ projects }) => {
+export const ProjectsList: React.FC<Tprops> = ({ projects, isLoading }) => {
+  const data = isLoading ? Array(9).fill({}) : projects;
+
   return (
     <Container>
-      {projects.map((item, index) => (
-        <ProjectsListItem key={index} item={item} />
+      {data.map((item, index) => (
+        <ProjectsListItem key={index} item={item} isLoading={isLoading} />
       ))}
     </Container>
   );

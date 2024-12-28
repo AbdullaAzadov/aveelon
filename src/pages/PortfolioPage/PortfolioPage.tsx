@@ -1,17 +1,20 @@
-import { ProjectsList, TabSections } from '@components/index';
-import { loadProjectsByCategory } from '@data/projects';
-import { IProjectListItem, ProjectsCategoriesData } from '@data/ProtfolioPage';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+
+import { useProject } from '@hooks/useProject';
+import { ProjectsList, TabSections } from '@components/index';
+import { IProjectListItem, ProjectsCategoriesData } from '@data/ProtfolioPage';
 
 export const PortfolioPage = () => {
   const [selectedTabIndex, setSelectedTabIndex] = useState<number>(0);
-  const [projects, setProjects] = useState<IProjectListItem[]>([]);
   const category = ProjectsCategoriesData[selectedTabIndex];
 
-  useLayoutEffect(() => {
-    loadProjectsByCategory(category).then((data) => setProjects(data));
-  }, [category]);
+  const { getProjectsByCategory, isLoading } = useProject();
+  const [projects, setProjects] = useState<IProjectListItem[]>([]);
+
+  useEffect(() => {
+    getProjectsByCategory(category).then((data) => setProjects(data));
+  }, [category, getProjectsByCategory]);
 
   return (
     <SContainer>
@@ -22,7 +25,7 @@ export const PortfolioPage = () => {
         size='s'
         outline={false}
       />
-      <ProjectsList projects={projects} />
+      <ProjectsList projects={projects} isLoading={isLoading} />
     </SContainer>
   );
 };

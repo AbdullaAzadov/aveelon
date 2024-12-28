@@ -9,6 +9,7 @@
     "baseUrl": "./",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@assets/*": ["src/assets/*"],
       "@constants/*": ["src/constants/*"],
       "@context/*": ["src/context/*"],
       "@data/*": ["src/data/*"],
