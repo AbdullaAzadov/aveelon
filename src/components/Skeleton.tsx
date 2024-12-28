@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CSS_Skeleton = styled.div<{
+export const Skeleton = styled.div<{
   $absolute?: boolean;
   $borderRadius?: string;
 }>`
@@ -39,7 +39,7 @@ export const CSS_Skeleton = styled.div<{
     }
   }
 `;
-CSS_Skeleton.defaultProps = {
+Skeleton.defaultProps = {
   $absolute: false,
   $borderRadius: '0.625rem',
 };

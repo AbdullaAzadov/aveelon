@@ -37,3 +37,5 @@ export * from './Spring';
 export * from './Swift';
 export * from './TS';
 export * from './Vue';
+export * from './Apple';
+export * from './PlayStore';

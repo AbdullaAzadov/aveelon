@@ -29,13 +29,13 @@ const StyledHeaderWrapper = styled.header`
   background: ${(p) => p.theme.colors.darkLight};
   z-index: 9999;
   width: 92vw;
-  padding: 1.5rem 4vw;
+  padding: clamp(1.5rem, -0.2232vw + 1.6429rem, 1.375rem) 4vw;
 
-  ${({ theme }) => media.lessThan(theme, 'desktop')} {
-    padding: 1.375rem 4vw;
-  }
+  -webkit-box-shadow: 0px 0.5rem 1.5rem -0.5rem ${(p) => p.theme.colors.dark};
+  -moz-box-shadow: 0px 0.5rem 1.5rem -0.5rem ${(p) => p.theme.colors.dark};
+  box-shadow: 0px 0.5rem 1.5rem -0.5rem ${(p) => p.theme.colors.dark};
 
   ${({ theme }) => media.lessThan(theme, 'tablet')} {
-    padding: 1rem 4vw;
+    padding: clamp(0.125rem, 3.7037vw + -0.7778rem, 1rem) 4vw;
   }
 `;

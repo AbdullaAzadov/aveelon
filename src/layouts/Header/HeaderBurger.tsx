@@ -10,7 +10,7 @@ export const HeaderBurger = ({ onNavigate }: { onNavigate: () => void }) => {
 };
 
 const StyledWrapper = styled.div`
-  top: 7.5rem;
+  top: clamp(5.375rem, 3.5714vw + 3.0893rem, 7.375rem);
   background-color: ${(p) => p.theme.colors.darkLight};
   position: fixed;
   z-index: 9999;

@@ -26,7 +26,5 @@ const SContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: clamp(1.875rem, 1.9608vw + 1.3971rem, 3.75rem);
-  padding: 5rem 0 6.25rem;
+  padding: clamp(1rem, 4.183vw + -0.0196rem, 5rem) 0 6.25rem;
 `;
-
-//   <Text style={{ whiteSpace: 'pre', textWrap: 'wrap' }}>{t('temp')}</Text>

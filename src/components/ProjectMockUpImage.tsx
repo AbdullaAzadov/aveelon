@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { FC, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import { CSS_Skeleton } from '@components/css/skeleton';
+import { Skeleton } from '@components/index';
 import { removeDomain } from '@utils/string';
 
 interface ProjectMockUpImageProps {
@@ -27,7 +27,7 @@ export const ProjectMockUpImage: FC<ProjectMockUpImageProps> = ({
 
   return (
     <StyledContainer className={clsx(usage, skeleton && 'skeleton')}>
-      {skeleton && <CSS_Skeleton $absolute />}
+      {skeleton && <Skeleton $absolute />}
       <div className='img-wrapper'>
         {isLoading && <div className='loader'></div>}
         <img
@@ -63,6 +63,8 @@ const StyledContainer = styled.div`
     padding: 4.875rem 0;
   }
   &.details {
+    padding: clamp(1.125rem, 14.5089vw + -8.1607rem, 9.25rem) 0
+      clamp(2.5rem, 9.8214vw + -3.7857rem, 8rem);
     border-radius: 1.25rem;
   }
 

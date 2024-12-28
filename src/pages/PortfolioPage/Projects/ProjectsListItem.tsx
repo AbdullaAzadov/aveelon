@@ -1,11 +1,10 @@
-import styled from 'styled-components';
-import { ProjectMockUpImage } from '@components/ProjectMockUpImage';
-import { Button, Text } from '@components/index';
-import { IProjectListItem } from '@data/ProtfolioPage';
 import { FC } from 'react';
-import { useTranslation } from 'react-i18next';
-import { CSS_Skeleton } from '@components/css/skeleton';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
+
+import { Button, Text, Skeleton, ProjectMockUpImage } from '@components/index';
+import { IProjectListItem } from '@data/ProtfolioPage';
 import { RouteNames } from '@routes/RouteNames';
 import { scrollToTop } from '@utils/screen';
 
@@ -28,21 +27,21 @@ export const ProjectsListItem: FC<Tprops> = ({ item, isLoading }) => {
       <Container>
         <ProjectMockUpImage skeleton />
         <div className='info'>
-          <CSS_Skeleton $borderRadius='0.25rem'>
+          <Skeleton $borderRadius='0.25rem'>
             <Text as='h2' className='title'>
               1
             </Text>
-          </CSS_Skeleton>
-          <CSS_Skeleton $borderRadius='0.25rem'>
+          </Skeleton>
+          <Skeleton $borderRadius='0.25rem'>
             <Text className='desc'>1</Text>
-          </CSS_Skeleton>
+          </Skeleton>
         </div>
         <div className='btn'>
-          <CSS_Skeleton $borderRadius='0.25rem'>
+          <Skeleton $borderRadius='0.25rem'>
             <Button variant='secondary' className='btn'>
               1
             </Button>
-          </CSS_Skeleton>
+          </Skeleton>
         </div>
       </Container>
     );
