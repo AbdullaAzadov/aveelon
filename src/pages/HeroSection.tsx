@@ -37,20 +37,21 @@ export const PageHeroSection: React.FC<PageHeroSectionProps> = ({
 };
 
 const SWrapper = styled.div`
+  width: 100%;
   padding: 6.875rem 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   .left {
-    flex: 1 1 60%;
+    flex: 1 1 50%;
     *:not(:last-child) {
       margin-bottom: 2.5rem;
     }
   }
 
   .right {
-    flex: 1 1 40%;
+    flex: 1 1 50%;
     display: flex;
     justify-content: flex-end;
     padding-right: 3rem;

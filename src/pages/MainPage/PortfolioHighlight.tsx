@@ -28,7 +28,7 @@ export const PortfolioHighlight = () => {
           ))}
         </div>
         <Button outlined className='btn' onClick={handleClick}>
-          Перейти в портфолио
+          {t('go-to-portfolio')}
         </Button>
       </div>
       <div className='image'>
