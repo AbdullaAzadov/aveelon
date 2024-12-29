@@ -4,11 +4,11 @@ import { createBrowserRouter, Navigate } from 'react-router-dom';
 import AppLayout from '@layouts/AppLayout';
 import { RouteNames } from './RouteNames';
 import { MainPage } from '@pages/MainPage/MainPage';
+import { ProjectPage } from '@pages/ProjectPage/ProjectPage';
 
 const ServicesPage = lazy(() => import('@pages/ServicesPage/ServicesPage'));
 const MarketingPage = lazy(() => import('@pages/MarketingPage/MarketingPage'));
 const PortfolioPage = lazy(() => import('@pages/PortfolioPage/PortfolioPage'));
-const ProjectPage = lazy(() => import('@pages/ProjectPage/ProjectPage'));
 const OfferPage = lazy(() => import('@pages/OfferPage'));
 const PolicyPage = lazy(() => import('@pages/PolicyPage'));
 
@@ -44,10 +44,6 @@ const router = createBrowserRouter([
       {
         path: RouteNames.PRIVACY_POLICY,
         element: <PolicyPage />,
-      },
-      {
-        path: '*',
-        element: <Navigate to='/' />,
       },
     ],
   },
