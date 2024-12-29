@@ -84,6 +84,10 @@ const StyledDefault = styled.div`
     border-color: ${(p) => p.theme.colors.brand};
   }
 
+  &.no-outline:hover {
+    background-color: ${(p) => p.theme.colors.brandDark};
+  }
+
   &.active,
   &:active {
     background-color: ${(p) => p.theme.colors.brandDark};

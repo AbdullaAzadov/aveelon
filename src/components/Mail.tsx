@@ -14,11 +14,18 @@ export function Mail({
 }) {
   return (
     <StyledLink href={`mail:${value}`}>
-      {useCustomLabel ? children : <Text>{label}</Text>}
+      {useCustomLabel ? children : <Text className='text'>{label}</Text>}
     </StyledLink>
   );
 }
 
 const StyledLink = styled.a`
   text-decoration: none;
+
+  .text {
+    transition: all 150ms ease-in-out;
+    &:hover {
+      color: ${(p) => p.theme.colors.brand};
+    }
+  }
 `;

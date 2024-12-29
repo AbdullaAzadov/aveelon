@@ -33,10 +33,14 @@ export const Card: FC<ICardProps> = ({
   return (
     <StyledCard className={className}>
       {icon && <div className='icon'>{icon}</div>}
-      <Text as={title.as || 'h2'} color={title.color || 'white'}>
+      <Text
+        as={title.as || 'h2'}
+        color={title.color || 'white'}
+        className='title'
+      >
         {t(title.value)}
       </Text>
-      <Text as={body.as || 'p'} color={body.color || 'white'}>
+      <Text as={body.as || 'p'} color={body.color || 'white'} className='body'>
         {t(body.value)}
       </Text>
     </StyledCard>
@@ -48,7 +52,6 @@ const StyledCard = styled.div`
   padding: 3.125rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   gap: 1.25rem;
   border-radius: 1.25rem;
   background-color: ${(p) => p.theme.colors.gray};
@@ -92,5 +95,12 @@ const StyledCard = styled.div`
 
   ${({ theme }) => media.lessThan(theme, 'tablet')} {
     padding: 2.5rem 1.25rem;
+  }
+
+  .title {
+    height: 40%;
+  }
+  .body {
+    height: 50%;
   }
 `;

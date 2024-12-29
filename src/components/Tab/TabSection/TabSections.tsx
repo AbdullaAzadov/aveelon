@@ -47,7 +47,7 @@ const SContainer = styled.div`
   }
 
   &.l {
-    gap: 3.75rem;
+    gap: clamp(0.5rem, 4.5139vw + -1.6667rem, 3.75rem);
   }
 
   &::-webkit-scrollbar {

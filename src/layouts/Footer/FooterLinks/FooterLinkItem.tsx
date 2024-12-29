@@ -4,7 +4,7 @@ import { useScreenType } from '@hooks/useScreenType';
 import { scrollToTop } from '@utils/screen';
 import { media } from '@utils/style-helpers';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const FooterLinkItem = ({
@@ -24,9 +24,11 @@ export const FooterLinkItem = ({
         {t(header)}
       </Text>
       {links.map((item, index) => (
-        <Link to={item.link} key={index} onClick={scrollToTop}>
-          <Text as={isUltraSmall ? 'h4' : 'p'}>{t(item.name)}</Text>
-        </Link>
+        <NavLink to={item.link} key={index} onClick={scrollToTop}>
+          <Text as={isUltraSmall ? 'h4' : 'p'} className='text'>
+            {t(item.name)}
+          </Text>
+        </NavLink>
       ))}
       {children}
     </StyledWrapper>
@@ -48,5 +50,14 @@ const StyledWrapper = styled.div`
 
   ${({ theme }) => media.lessThan(theme, 'tablet')} {
     text-align: center;
+  }
+
+  .text {
+    transition: all 150ms ease-in-out;
+  }
+
+  .text:hover,
+  .active .text {
+    color: ${(p) => p.theme.colors.brand};
   }
 `;

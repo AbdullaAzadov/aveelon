@@ -22,7 +22,9 @@ export function Tel({
       {useCustomLabel ? (
         children
       ) : (
-        <Text as={isUltraSmall ? 'h4' : 'p'}>{label}</Text>
+        <Text as={isUltraSmall ? 'h4' : 'p'} className='text'>
+          {label}
+        </Text>
       )}
     </StyledLink>
   );
@@ -30,4 +32,11 @@ export function Tel({
 
 const StyledLink = styled.a`
   text-decoration: none;
+
+  .text {
+    transition: all 150ms ease-in-out;
+    &:hover {
+      color: ${(p) => p.theme.colors.brand};
+    }
+  }
 `;

@@ -79,6 +79,9 @@ const Container = styled.div`
 
   .title {
     margin-bottom: 0.25rem;
+    text-wrap: nowrap;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
   }
   .desc {
     white-space: nowrap;

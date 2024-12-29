@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { IHeaderLink } from '@data/Header';
 import { Text } from '@components/index';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { media } from '@utils/style-helpers';
 import { scrollToTop } from '@utils/screen';
+import clsx from 'clsx';
 
 type HeaderNavProps = {
   data: IHeaderLink;
@@ -18,6 +19,8 @@ export const HeaderNavItem: FC<HeaderNavProps> = ({
 }) => {
   const { t } = useTranslation();
   const nav = useNavigate();
+  const location = useLocation();
+  const isActive = data.link === location.pathname;
 
   const handleClick = () => {
     scrollToTop();
@@ -27,7 +30,7 @@ export const HeaderNavItem: FC<HeaderNavProps> = ({
 
   return (
     <StyledWrapper onClick={handleClick}>
-      <Text as='p' className='text'>
+      <Text as='p' className={clsx('text', isActive && 'active')}>
         {t(data.name)}
       </Text>
     </StyledWrapper>
@@ -40,7 +43,7 @@ const StyledWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0.625rem 0;
-  width: clamp(5.75rem, 8.929vw + 0.036rem, 10.75rem);
+  width: clamp(6rem, 8.929vw + 0.036rem, 10.75rem);
   cursor: pointer;
 
   ${({ theme }) => media.between(theme, 'tablet', 'wideTablet')} {
@@ -60,5 +63,12 @@ const StyledWrapper = styled.div`
 
   * {
     user-select: none;
+  }
+  .text {
+    transition: all 150ms ease-in-out;
+  }
+  &:hover .text,
+  .active {
+    color: ${(p) => p.theme.colors.brand};
   }
 `;
