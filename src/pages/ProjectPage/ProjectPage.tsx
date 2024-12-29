@@ -130,4 +130,10 @@ const SWrapper = styled.div`
       border-radius: 0.625rem;
     }
   }
+  .title {
+    text-wrap: wrap;
+    ${({ theme }) => media.moreThan(theme, 'desktop')} {
+      font-size: clamp(2rem, -2rem + 5vw, 4rem);
+    }
+  }
 `;

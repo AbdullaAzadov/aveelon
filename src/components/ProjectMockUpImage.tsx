@@ -24,8 +24,6 @@ export const ProjectMockUpImage: FC<ProjectMockUpImageProps> = ({
   }, [src]);
 
   const handleImgLoaded = () => {
-    console.log('loaded');
-
     setIsLoading(false);
   };
 
