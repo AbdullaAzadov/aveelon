@@ -5,8 +5,10 @@ import svgo from 'vite-plugin-svgo';
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/aveelon-showcase/',
   build: {
     minify: 'esbuild',
+    outDir: 'dist',
     rollupOptions: {
       output: {
         manualChunks(id) {

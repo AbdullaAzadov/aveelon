@@ -6,7 +6,7 @@ export const MainPageHeroData: PageHeroSectionProps = {
   header: 'main-page-hero-header',
   paragraph: 'main-page-hero-paragraph',
   buttonText: 'leave-a-request',
-  imageSrc: '/images/computer-solutions.webp',
+  imageSrc: '/aveelon-showcase/images/computer-solutions.webp',
 };
 
 export const AboutUsData: ITabBarProps = {
@@ -178,9 +178,9 @@ export const PortfolioData = {
     'portfolio-highlight-paragraph-3',
   ],
   imageSrc: [
-    '/images/portfolio-iphone-1.webp',
-    '/images/portfolio-iphone-2.webp',
-    '/images/portfolio-iphone-3.webp',
+    '/aveelon-showcase/images/portfolio-iphone-1.webp',
+    '/aveelon-showcase/images/portfolio-iphone-2.webp',
+    '/aveelon-showcase/images/portfolio-iphone-3.webp',
   ],
-  imageMobileSrc: '/images/portfolio-iphone-mobile.webp',
+  imageMobileSrc: '/aveelon-showcase/images/portfolio-iphone-mobile.webp',
 };

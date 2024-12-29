@@ -26,7 +26,7 @@ export const ProjectPage = () => {
 
   useLayoutEffect(() => {
     getProjectById(id, category as TProjectCategories).then((p) => {
-      if (!p) return nav('/');
+      if (!p) return nav('/aveelon-showcase');
       setProject(p);
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -128,6 +128,13 @@ const SWrapper = styled.div`
     &::-webkit-scrollbar-thumb {
       background: rgba(121, 121, 121, 0.2);
       border-radius: 0.625rem;
+    }
+  }
+
+  .title {
+    text-wrap: wrap;
+    ${({ theme }) => media.moreThan(theme, 'desktop')} {
+      font-size: clamp(2.25rem, -1.25rem + 4.375vw, 4rem);
     }
   }
 `;

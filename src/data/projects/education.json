@@ -1,7 +1,7 @@
 [
   {
     "id": "ustudy",
-    "imageSrc": "/images/projects/ustudy.webp",
+    "imageSrc": "/aveelon-showcase/images/projects/ustudy.webp",
     "name": "Ustudy",
     "desc": "ustudy-desc",
     "category": "education",
@@ -11,7 +11,7 @@
   },
   {
     "id": "growth-in-motion",
-    "imageSrc": "/images/projects/growth-in-motion.webp",
+    "imageSrc": "/aveelon-showcase/images/projects/growth-in-motion.webp",
     "name": "Growth in Motion",
     "desc": "growth-desc",
     "category": "education",

@@ -14,7 +14,7 @@ const PolicyPage = lazy(() => import('@pages/PolicyPage'));
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: '/aveelon-showcase',
     element: <AppLayout />,
     children: [
       {
@@ -49,7 +49,7 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <Navigate to='/' />,
+    element: <Navigate to='/aveelon-showcase' />,
   },
 ]);
 

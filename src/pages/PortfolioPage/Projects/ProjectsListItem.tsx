@@ -18,7 +18,7 @@ export const ProjectsListItem: FC<Tprops> = ({ item, isLoading }) => {
   const nav = useNavigate();
 
   const onClick = () => {
-    nav(`${RouteNames.PROJECT}${item.category}/${item.id}`);
+    nav(`/aveelon-showcase/${RouteNames.PROJECT}${item.category}/${item.id}`);
     scrollToTop();
   };
 

@@ -1,7 +1,7 @@
 [
   {
     "id": "open-sooq",
-    "imageSrc": "/images/projects/open-sooq.webp",
+    "imageSrc": "/aveelon-showcase/images/projects/open-sooq.webp",
     "name": "OpenSooq",
     "desc": "open-sooq-desc",
     "category": "marketplace",
@@ -11,7 +11,7 @@
   },
   {
     "id": "konga",
-    "imageSrc": "/images/projects/konga.webp",
+    "imageSrc": "/aveelon-showcase/images/projects/konga.webp",
     "name": "Konga",
     "desc": "konga-desc",
     "category": "marketplace",
@@ -21,7 +21,7 @@
   },
   {
     "id": "iq-cars",
-    "imageSrc": "/images/projects/iq-cars.webp",
+    "imageSrc": "/aveelon-showcase/images/projects/iq-cars.webp",
     "name": "IQCars",
     "desc": "iq-cars-desc",
     "category": "marketplace",
@@ -31,7 +31,7 @@
   },
   {
     "id": "cities-store",
-    "imageSrc": "/images/projects/cities-store.webp",
+    "imageSrc": "/aveelon-showcase/images/projects/cities-store.webp",
     "name": "Cities Store",
     "desc": "cities-store-desc",
     "category": "marketplace",

@@ -27,7 +27,7 @@ export const HeaderActionsMobile: FC<props> = ({ isShow, setIsShow }) => {
           {!isShow && <BurgerIcon onClick={() => setIsShow(true)} />}
         </IconButton>
         <StyledLogo>
-          <Logo onClick={() => nav('/')} />
+          <Logo onClick={() => nav('/aveelon-showcase')} />
         </StyledLogo>
         <LanguageSelector />
       </StyledWrapper>

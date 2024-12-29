@@ -8,7 +8,7 @@ export const ServicesPageHeroData: PageHeroSectionProps = {
   header: 'services-page-hero-header',
   paragraph: 'services-page-hero-paragraph',
   buttonText: 'leave-a-request',
-  imageSrc: '/images/phone.webp',
+  imageSrc: '/aveelon-showcase/images/phone.webp',
 };
 
 export const ITServicesData: ITabBarProps = {

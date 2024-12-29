@@ -14,7 +14,7 @@ export const HeaderActions = () => {
     <StyledWrapper>
       <StyledLogoSide>
         <StyledLogo>
-          <Logo onClick={() => nav('/')} />
+          <Logo onClick={() => nav('/aveelon-showcase')} />
         </StyledLogo>
         <HeaderNav />
       </StyledLogoSide>
