@@ -5,6 +5,7 @@ import { Accordion } from '@components/Accordion';
 import { ArrowRightIcon } from '@components/icons';
 import { Text } from '@components/Text';
 import { IFooterLinkItem } from '@data/Footer';
+import { scrollToTop } from '@utils/screen';
 
 export const FooterLinkItemMobile = ({
   header,

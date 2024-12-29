@@ -18,6 +18,7 @@ export const ScreenProvider: React.FC<{ children: React.ReactNode }> = ({
     };
   }, []);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const value = useMemo(() => getCurrentScreen(), [windowWidth]);
 
   return (

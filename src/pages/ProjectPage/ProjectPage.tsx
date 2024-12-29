@@ -29,6 +29,7 @@ export const ProjectPage = () => {
       if (!p) return nav('/');
       setProject(p);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id, category]);
 
   if (!project)

@@ -15,7 +15,7 @@ export const usePortfolioPage = () => {
 
   // fetch projects
   useEffect(() => {
-    getProjectsByCategory(category).then((data) => {
+    getProjectsByCategory(category as TProjectCategories).then((data) => {
       setProjects(data);
     });
   }, [category, getProjectsByCategory]);
