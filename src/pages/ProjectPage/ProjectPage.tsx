@@ -133,7 +133,7 @@ const SWrapper = styled.div`
   .title {
     text-wrap: wrap;
     ${({ theme }) => media.moreThan(theme, 'desktop')} {
-      font-size: clamp(2rem, -2rem + 5vw, 4rem);
+      font-size: clamp(2rem, -1.5rem + 4.375vw, 3.75rem);
     }
   }
 `;
