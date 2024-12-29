@@ -21,6 +21,8 @@ export const PortfolioPage = () => {
   );
 };
 
+export default PortfolioPage;
+
 const SContainer = styled.div`
   display: flex;
   flex-direction: column;

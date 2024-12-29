@@ -48,6 +48,8 @@ export const ServicesPage = () => {
   );
 };
 
+export default ServicesPage;
+
 const SContainer = styled.div`
   display: flex;
   flex-direction: column;

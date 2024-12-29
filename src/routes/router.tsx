@@ -1,7 +1,16 @@
+/* eslint-disable react-refresh/only-export-components */
+import { lazy } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import AppLayout from '@layouts/AppLayout';
 import { RouteNames } from './RouteNames';
-import * as Pages from '@pages/index';
+import { MainPage } from '@pages/MainPage/MainPage';
+
+const ServicesPage = lazy(() => import('@pages/ServicesPage/ServicesPage'));
+const MarketingPage = lazy(() => import('@pages/MarketingPage/MarketingPage'));
+const PortfolioPage = lazy(() => import('@pages/PortfolioPage/PortfolioPage'));
+const ProjectPage = lazy(() => import('@pages/ProjectPage/ProjectPage'));
+const OfferPage = lazy(() => import('@pages/OfferPage'));
+const PolicyPage = lazy(() => import('@pages/PolicyPage'));
 
 const router = createBrowserRouter([
   {
@@ -10,31 +19,31 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Pages.MainPage />,
+        element: <MainPage />,
       },
       {
         path: RouteNames.SERVICES,
-        element: <Pages.ServicesPage />,
+        element: <ServicesPage />,
       },
       {
         path: RouteNames.MARKETING,
-        element: <Pages.MarketingPage />,
+        element: <MarketingPage />,
       },
       {
         path: RouteNames.PORTFOLIO,
-        element: <Pages.PortfolioPage />,
+        element: <PortfolioPage />,
       },
       {
         path: `${RouteNames.PROJECT}:category/:id`,
-        element: <Pages.ProjectPage />,
+        element: <ProjectPage />,
       },
       {
         path: RouteNames.PUBLIC_OFFER,
-        element: <Pages.OfferPage />,
+        element: <OfferPage />,
       },
       {
         path: RouteNames.PRIVACY_POLICY,
-        element: <Pages.PolicyPage />,
+        element: <PolicyPage />,
       },
       {
         path: '*',
@@ -44,7 +53,7 @@ const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <h1>404</h1>,
+    element: <Navigate to='/' />,
   },
 ]);
 

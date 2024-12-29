@@ -63,6 +63,8 @@ export const MarketingPage = () => {
   );
 };
 
+export default MarketingPage;
+
 const SContainer = styled.div`
   display: flex;
   flex-direction: column;

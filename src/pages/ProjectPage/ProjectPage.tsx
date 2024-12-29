@@ -80,6 +80,8 @@ export const ProjectPage = () => {
   );
 };
 
+export default ProjectPage;
+
 const SWrapper = styled.div`
   display: grid;
   gap: 5rem;

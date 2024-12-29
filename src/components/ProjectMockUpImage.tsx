@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import { FC, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Skeleton } from '@components/index';
-import { removeDomain } from '@utils/string';
 
 interface ProjectMockUpImageProps {
   src?: string;
@@ -16,14 +15,21 @@ export const ProjectMockUpImage: FC<ProjectMockUpImageProps> = ({
   skeleton = false,
 }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const imgRef = useRef(null);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
-    if (!imgRef.current) return;
-    const img = imgRef.current as HTMLImageElement;
-    const imgSrc = removeDomain(img.src);
-    setIsLoading(src !== imgSrc);
-  }, [src, imgRef]);
+    if (!src) return;
+    setIsLoading(true);
+    if (imgRef.current?.complete) handleImgLoaded();
+  }, [src]);
+
+  const handleImgLoaded = () => {
+    console.log('loaded');
+
+    setIsLoading(false);
+  };
+
+  const isImgLoading = !src || isLoading;
 
   return (
     <StyledContainer className={clsx(usage, skeleton && 'skeleton')}>
@@ -33,10 +39,9 @@ export const ProjectMockUpImage: FC<ProjectMockUpImageProps> = ({
         <img
           src={src}
           key={src}
-          onLoad={() => setIsLoading(false)}
-          onError={() => setIsLoading(false)}
+          onLoad={handleImgLoaded}
           ref={imgRef}
-          className={clsx(isLoading && 'hidden')}
+          className={clsx(isImgLoading && 'hidden')}
           alt='project mockup'
         />
       </div>
