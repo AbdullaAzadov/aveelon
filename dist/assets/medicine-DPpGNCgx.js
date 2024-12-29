@@ -1,0 +1,1 @@
+const e=[{id:"tanzmed",imageSrc:"/images/projects/tanzmed.webp",name:"Tanzmed",desc:"tanzmed-desc",category:"medicine",website:"https://tanzmed.co.tz",android:"https://play.google.com/store/apps/details?id=com.dudumizi.tanzmedtz",ios:"https://apps.apple.com/kz/app/tanzmed-healthcare-for-all/id6505112947"}];export{e as default};
