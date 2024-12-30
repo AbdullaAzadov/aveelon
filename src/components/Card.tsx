@@ -97,10 +97,12 @@ const StyledCard = styled.div`
     padding: 2.5rem 1.25rem;
   }
 
-  .title {
-    height: 40%;
-  }
-  .body {
-    height: 50%;
+  &:not(.small) {
+    .title {
+      height: 40%;
+    }
+    .body {
+      height: 50%;
+    }
   }
 `;

@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Geologica:wght@400..600&display=swap');
 @import '/node_modules/reset-css/reset.css';
 
+body {
+  background-color: #242323;
+}
+
 a {
   text-decoration-color: transparent;
   color: inherit;
