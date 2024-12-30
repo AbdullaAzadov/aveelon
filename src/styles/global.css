@@ -13,3 +13,16 @@ h4,
 p {
   line-height: 1.25;
 }
+
+.wa-icon path,
+.tg-icon path {
+  transition: stroke 150ms ease-in-out;
+}
+
+.wa-icon:hover path {
+  stroke: #128c7e;
+}
+
+.tg-icon:hover path {
+  stroke: #27a4e3;
+}
