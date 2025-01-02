@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { Card, TabSections, TCardProps, Text } from '../index';
 import { media } from '@utils/style-helpers';
+import { AnimatePresence } from 'framer-motion';
 
 export interface ITabBarContent {
   tabName?: string;
@@ -48,17 +49,20 @@ export const TabBar: FC<ITabBarProps> = ({
           </div>
         )}
       </div>
-      <Grid $count={currentTab.card.length} $cols={4}>
-        {currentTab.card.map((card, index) => (
-          <Card
-            key={index}
-            icon={card.icon}
-            title={card.title}
-            body={card.body}
-            className={cardSize}
-          />
-        ))}
-      </Grid>
+      <AnimatePresence mode='wait'>
+        <Grid key={selectedIndex} $count={currentTab.card.length} $cols={4}>
+          {currentTab.card.map((card, index) => (
+            <Card
+              key={index}
+              index={index}
+              icon={card.icon}
+              title={card.title}
+              body={card.body}
+              className={cardSize}
+            />
+          ))}
+        </Grid>
+      </AnimatePresence>
     </StyledWrapper>
   );
 };

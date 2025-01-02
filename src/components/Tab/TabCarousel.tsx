@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
 import { Card, TabSections, TCardProps, Text } from '../index';
 import clsx from 'clsx';
+import { AnimatePresence } from 'framer-motion';
 
 export interface ITabCarouselContent {
   tabName?: string;
@@ -65,21 +66,26 @@ export const TabCarousel: FC<ITabCarouselProps> = ({
           </div>
         )}
       </div>
-      <div
-        className='card-wrapper'
-        onScroll={handleScroll}
-        ref={scrollRef as LegacyRef<HTMLDivElement>}
-      >
-        {currentTab.card.map((card, index) => (
-          <Card
-            key={index}
-            icon={card.icon}
-            title={card.title}
-            body={card.body}
-            className={clsx('card-item', cardSize)}
-          />
-        ))}
-      </div>
+
+      <AnimatePresence mode='wait'>
+        <div
+          className='card-wrapper'
+          onScroll={handleScroll}
+          ref={scrollRef as LegacyRef<HTMLDivElement>}
+          key={currentTabIndex}
+        >
+          {currentTab.card.map((card, index) => (
+            <Card
+              key={index}
+              index={index}
+              icon={card.icon}
+              title={card.title}
+              body={card.body}
+              className={clsx('card-item', cardSize)}
+            />
+          ))}
+        </div>
+      </AnimatePresence>
       <div className='card-indicator'>
         {currentTab.card.map((_, index) => (
           <div

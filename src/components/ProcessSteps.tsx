@@ -3,6 +3,7 @@ import { FC, useState } from 'react';
 import styled from 'styled-components';
 import { TabSections, Text } from '@components/index';
 import { useTranslation } from 'react-i18next';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type props = {
   data: IProcessStep[];
@@ -26,19 +27,27 @@ export const ProcessSteps: FC<props> = ({ data, sectionHeader }) => {
         onSelectSection={(value: number) => setSelectedIndex(value)}
         size='l'
       />
-      <SContent>
-        <div className='img'>{currentTab.icon}</div>
-        <div className='info'>
-          {currentTab.info.map((info, index) => (
-            <div className='info-item' key={index}>
-              <Text as='h2' className='info-item--title' key={index}>
-                {t(info.title)}
-              </Text>
-              <Text>{t(info.description)}</Text>
-            </div>
-          ))}
-        </div>
-      </SContent>
+      <AnimatePresence mode='wait'>
+        <SContent
+          as={motion.div}
+          key={currentTab.tabName}
+          initial={{ opacity: 0.1 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className='img'>{currentTab.icon}</div>
+          <div className='info'>
+            {currentTab.info.map((info, index) => (
+              <div className='info-item' key={index}>
+                <Text as='h2' className='info-item--title' key={index}>
+                  {t(info.title)}
+                </Text>
+                <Text>{t(info.description)}</Text>
+              </div>
+            ))}
+          </div>
+        </SContent>
+      </AnimatePresence>
     </SContainer>
   );
 };

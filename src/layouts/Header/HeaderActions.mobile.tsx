@@ -1,14 +1,15 @@
-import { FC } from 'react';
-import { Tel } from '@components/Tel';
-import { IconButton, LinkedIcon, Logo } from '@components/index';
+import React, { FC } from 'react';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
+import { IconButton, LinkedIcon, Logo, Tel } from '@components/index';
 import {
   BurgerIcon,
   CloseIcon,
   TelegramIcon,
   WhatsappIcon,
 } from '@components/icons';
-import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
 import { LanguageSelector } from './LanguageSelector';
 import CONST from '@constants/constants';
 
@@ -23,8 +24,15 @@ export const HeaderActionsMobile: FC<props> = ({ isShow, setIsShow }) => {
     <>
       <StyledWrapper>
         <IconButton size='1.75rem' className='SIcon'>
-          {isShow && <CloseIcon onClick={() => setIsShow(false)} />}
-          {!isShow && <BurgerIcon onClick={() => setIsShow(true)} />}
+          {isShow ? (
+            <HeaderBurgerAnimation keyMotion='close'>
+              <CloseIcon onClick={() => setIsShow(false)} />
+            </HeaderBurgerAnimation>
+          ) : (
+            <HeaderBurgerAnimation keyMotion='burger'>
+              <BurgerIcon onClick={() => setIsShow(true)} />
+            </HeaderBurgerAnimation>
+          )}
         </IconButton>
         <StyledLogo>
           <Logo onClick={() => nav('/')} />
@@ -99,3 +107,22 @@ const StyledLinks = styled.div`
   display: flex;
   gap: 0.625rem;
 `;
+
+const HeaderBurgerAnimation = ({
+  children,
+  keyMotion,
+}: {
+  children: React.ReactNode;
+  keyMotion: string;
+}) => {
+  return (
+    <motion.div
+      key={keyMotion}
+      initial={{ opacity: 0, rotate: -45 }}
+      animate={{ opacity: 1, rotate: 0 }}
+      transition={{ duration: 0.2 }}
+    >
+      {children}
+    </motion.div>
+  );
+};

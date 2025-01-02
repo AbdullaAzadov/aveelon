@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Text } from './index';
 import { useTranslation } from 'react-i18next';
 import { media } from '@utils/style-helpers';
+import { motion } from 'framer-motion';
 
 export type TCardProps = {
   icon: React.ReactNode | null;
@@ -21,6 +22,7 @@ export type TCardProps = {
 
 interface ICardProps extends TCardProps {
   className?: string;
+  index: number;
 }
 
 export const Card: FC<ICardProps> = ({
@@ -28,10 +30,21 @@ export const Card: FC<ICardProps> = ({
   title,
   body,
   className = '',
+  index = 1,
 }) => {
   const { t } = useTranslation();
   return (
-    <StyledCard className={className}>
+    <StyledCard
+      as={motion.div}
+      key={index}
+      className={className}
+      initial={{ y: 20, opacity: 0.5 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.4,
+        delay: index * 0.05,
+      }}
+    >
       {icon && <div className='icon'>{icon}</div>}
       <Text
         as={title.as || 'h2'}

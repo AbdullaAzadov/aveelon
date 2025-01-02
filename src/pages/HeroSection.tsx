@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useRedirect } from '@hooks/useRedirect';
 import { media } from '@utils/style-helpers';
 import { useTranslation } from 'react-i18next';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export interface PageHeroSectionProps {
   header: string;
@@ -22,11 +23,21 @@ export const PageHeroSection: React.FC<PageHeroSectionProps> = ({
 
   return (
     <SWrapper>
-      <div className='left'>
-        <Text as='h1'>{t(header)}</Text>
-        <Text style={{ width: '65%' }}>{t(paragraph)}</Text>
-        <Button onClick={handleClick}>{t(buttonText)}</Button>
-      </div>
+      <AnimatePresence mode='wait'>
+        <motion.div
+          key={header}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className='left'>
+            <Text as='h1'>{t(header)}</Text>
+            <Text style={{ width: '65%' }}>{t(paragraph)}</Text>
+            <Button onClick={handleClick}>{t(buttonText)}</Button>
+          </div>
+        </motion.div>
+      </AnimatePresence>
       <div className='right'>
         <div className='image-wrapper'>
           <ImageWithGlow src={imageSrc} alt='Computer' />

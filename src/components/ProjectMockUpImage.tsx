@@ -2,18 +2,22 @@ import clsx from 'clsx';
 import { FC, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { Skeleton } from '@components/index';
+import { useNavigate } from 'react-router-dom';
 
 interface ProjectMockUpImageProps {
   src?: string;
   skeleton?: boolean;
   usage?: 'list' | 'details';
+  linkTo?: string;
 }
 
 export const ProjectMockUpImage: FC<ProjectMockUpImageProps> = ({
   src = '',
   usage = 'list',
   skeleton = false,
+  linkTo = '',
 }) => {
+  const nav = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const imgRef = useRef<HTMLImageElement>(null);
 
@@ -30,7 +34,11 @@ export const ProjectMockUpImage: FC<ProjectMockUpImageProps> = ({
   const isImgLoading = !src || isLoading;
 
   return (
-    <StyledContainer className={clsx(usage, skeleton && 'skeleton')}>
+    <StyledContainer
+      onClick={() => linkTo && nav(linkTo)}
+      style={{ cursor: linkTo ? 'pointer' : 'default' }}
+      className={clsx(usage, skeleton && 'skeleton')}
+    >
       {skeleton && <Skeleton $absolute />}
       <div className='img-wrapper'>
         {isLoading && <div className='loader'></div>}
@@ -81,6 +89,12 @@ const StyledContainer = styled.div`
     width: 90%;
     padding-top: 40%;
     overflow: hidden;
+
+    transition: transform 500ms ease;
+    will-change: transform;
+    &:hover {
+      transform: scale(1.0125);
+    }
 
     img {
       position: absolute;
