@@ -2,11 +2,12 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import svgo from 'vite-plugin-svgo';
+import terser from '@rollup/plugin-terser';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    minify: 'esbuild',
+    minify: 'terser',
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -14,6 +15,7 @@ export default defineConfig({
             return 'vendor';
           }
         },
+        plugins: [terser()],
       },
     },
   },
