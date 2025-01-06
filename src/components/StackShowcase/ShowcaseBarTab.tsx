@@ -22,11 +22,11 @@ export const ShowcaseBarTab: React.FC<ShowcaseBarTabProps> = ({
       <Text as='h2' className='text'>
         {t(children)}
       </Text>
-      {isActive && 
-      <div className='icon'>
-        <ArrowRightIcon />
-      </div>
-      }
+      {isActive && (
+        <div className='icon'>
+          <ArrowRightIcon />
+        </div>
+      )}
     </SContainer>
   );
 };

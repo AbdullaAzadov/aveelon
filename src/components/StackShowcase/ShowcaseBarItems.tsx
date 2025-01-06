@@ -3,29 +3,39 @@ import { IStackTabItem } from '@data/StackShowcase';
 import { Text } from '@components/index';
 import { useTranslation } from 'react-i18next';
 import { media } from '@utils/style-helpers';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type props = {
   data: IStackTabItem;
+  index: number;
 };
 
-export const ShowcaseBarItems: React.FC<props> = ({ data }) => {
+export const ShowcaseBarItems: React.FC<props> = ({ data, index }) => {
   const { t } = useTranslation();
   return (
-    <Container>
-      {data.title && (
-        <Text as='h3' className='text'>
-          {t(data.title)}
-        </Text>
-      )}
-      <div className='items'>
-        {data.items.map((item, index) => (
-          <div className='item' key={index}>
-            {item.icon}
-            <Text>{t(item.name)}</Text>
-          </div>
-        ))}
-      </div>
-    </Container>
+    <AnimatePresence mode='popLayout'>
+      <Container
+        as={motion.div}
+        key={(index + 1) * Math.random()}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+        {data.title && (
+          <Text as='h3' className='text'>
+            {t(data.title)}
+          </Text>
+        )}
+        <div className='items'>
+          {data.items.map((item, index) => (
+            <div className='item' key={index}>
+              {item.icon}
+              <Text>{t(item.name)}</Text>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </AnimatePresence>
   );
 };
 

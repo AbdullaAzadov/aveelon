@@ -27,7 +27,7 @@ export const Header = () => {
 const StyledHeaderWrapper = styled.header`
   position: fixed;
   background: ${(p) => p.theme.colors.darkLight};
-  z-index: 9999;
+  z-index: 99999;
   width: 92vw;
   padding: clamp(1.5rem, -0.2232vw + 1.6429rem, 1.375rem) 4vw;
 

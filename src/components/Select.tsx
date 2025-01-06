@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 import { ArrowDownIcon } from '@components/icons/index';
 import { Text } from '@components/index';
+import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
 export interface IselectOption {
   value: string;
@@ -44,17 +46,24 @@ export const Select: FC<SelectProps> = ({
         style={{ width: width }}
       >
         <Text>{t(value?.label || placeholder)}</Text>
-        <ArrowDownIcon />
+        <ArrowDownIcon className={clsx('icon', isShow && 'active')} />
       </StyledSelect>
       {isShow && (
         <StyledOptions style={{ width: width }}>
-          {options.map((option) => (
+          {options.map((option, index) => (
             <StyledOptionItem
               style={{ width: width }}
               key={option.value}
+              className={clsx(value?.value === option.value && 'active')}
               onClick={() => handleChange(option)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.3,
+              }}
             >
-              <Text>{t(option.label)}</Text>
+              <Text className='text'>{t(option.label)}</Text>
             </StyledOptionItem>
           ))}
         </StyledOptions>
@@ -65,6 +74,23 @@ export const Select: FC<SelectProps> = ({
 
 const StyledWrapper = styled.div`
   position: relative;
+
+  &:hover,
+  .active {
+    path {
+      stroke: ${(p) => p.theme.colors.brand};
+    }
+  }
+
+  .icon {
+    transition: all 0.3s;
+    path {
+      transition: stroke 0.15s ease-in;
+    }
+    &.active {
+      transform: rotate(180deg);
+    }
+  }
 `;
 
 const StyledSelect = styled.div`
@@ -90,8 +116,17 @@ const StyledOptions = styled.div`
   gap: 20px;
   z-index: 10000;
 `;
-const StyledOptionItem = styled.div`
+const StyledOptionItem = motion.create(styled.div`
   text-align: center;
   user-select: none;
   cursor: pointer;
-`;
+
+  .text {
+    transition: color 0.15s ease-in;
+  }
+
+  &:hover > .text,
+  &.active > .text {
+    color: ${(p) => p.theme.colors.brand};
+  }
+`);

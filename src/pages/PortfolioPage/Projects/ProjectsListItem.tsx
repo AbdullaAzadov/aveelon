@@ -16,9 +16,10 @@ type Tprops = {
 export const ProjectsListItem: FC<Tprops> = ({ item, isLoading }) => {
   const { t } = useTranslation();
   const nav = useNavigate();
+  const navLink = `${RouteNames.PROJECT}${item.category}/${item.id}`;
 
   const onClick = () => {
-    nav(`${RouteNames.PROJECT}${item.category}/${item.id}`);
+    nav(navLink);
     scrollToTop();
   };
 
@@ -49,7 +50,7 @@ export const ProjectsListItem: FC<Tprops> = ({ item, isLoading }) => {
 
   return (
     <Container>
-      <ProjectMockUpImage src={item.imageSrc} />
+      <ProjectMockUpImage src={item.imageSrc} linkTo={navLink} />
       <div className='info'>
         <Text as='h2' color='brand' className='title'>
           {t(item.name)}

@@ -27,7 +27,7 @@ export const ShowcaseBar = ({ data }: props) => {
       <div className='content'>
         <div className='content-items'>
           {data[activeTab].tab.map((item, index) => (
-            <ShowcaseBarItems data={item} key={index} />
+            <ShowcaseBarItems data={item} key={index} index={index} />
           ))}
         </div>
       </div>

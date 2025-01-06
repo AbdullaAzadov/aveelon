@@ -25,7 +25,7 @@ export const ShowcaseBarMobile = ({ data }: props) => {
       </div>
       <div className='content'>
         {data[activeTab].tab.map((item, index) => (
-          <ShowcaseBarItems data={item} key={index} />
+          <ShowcaseBarItems data={item} key={index} index={index} />
         ))}
       </div>
     </SContainer>
