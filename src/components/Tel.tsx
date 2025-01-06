@@ -6,19 +6,21 @@ export function Tel({
   value,
   label,
   useCustomLabel = false,
+  onClick = () => {},
   children,
   className = '',
 }: {
   value: string;
   label: string;
   useCustomLabel?: boolean;
+  onClick?: () => void;
   children?: React.ReactNode;
   className?: string;
 }) {
   const { isUltraSmall } = useScreenType();
 
   return (
-    <StyledLink href={`tel:+${value}`} className={className}>
+    <StyledLink href={`tel:+${value}`} className={className} onClick={onClick}>
       {useCustomLabel ? (
         children
       ) : (

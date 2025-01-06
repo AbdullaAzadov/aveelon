@@ -1,25 +1,37 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 
 import { useScreenType } from '@hooks/useScreenType';
 import { HeaderActions, HeaderActionsMobile, HeaderBurger } from './index';
 import { media } from '@utils/style-helpers';
+import { useOutside } from '@hooks/useOutside';
+import { AnimatePresence } from 'framer-motion';
 
 export const Header = () => {
-  const [showBurger, setShowBurger] = useState<boolean>(false);
+  const {
+    ref,
+    isShow: showBurger,
+    setIsShow: setShowBurger,
+  } = useOutside(false);
   const { isMobile } = useScreenType();
+  const hideBurger = () => setShowBurger(false);
 
   return (
     <>
       <StyledHeaderWrapper>
         {!isMobile && <HeaderActions />}
         {isMobile && (
-          <HeaderActionsMobile setIsShow={setShowBurger} isShow={showBurger} />
+          <HeaderActionsMobile
+            setIsShow={setShowBurger}
+            isShow={showBurger}
+            hideBurger={hideBurger}
+          />
         )}
       </StyledHeaderWrapper>
-      {isMobile && showBurger && (
-        <HeaderBurger onNavigate={() => setShowBurger(false)} />
-      )}
+      <AnimatePresence>
+        {isMobile && showBurger && (
+          <HeaderBurger onNavigate={() => setShowBurger(false)} ref={ref} />
+        )}
+      </AnimatePresence>
     </>
   );
 };

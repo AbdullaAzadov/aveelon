@@ -1,12 +1,15 @@
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
-import { LanguageData, TLanguage } from '@data/Language';
+import { LanguageData, TLanguage } from '@data/Language.tsx';
 import { Select } from '@components/index';
-import { media } from '@utils/style-helpers';
 
-export const LanguageSelector = () => {
+type LanguageSelectorProps = {
+  onToggle?: () => void;
+};
+
+export const LanguageSelector: FC<LanguageSelectorProps> = ({ onToggle }) => {
   const { i18n } = useTranslation();
   const [language, setLanguage] = useState<TLanguage>(
     i18n.language as TLanguage
@@ -23,14 +26,12 @@ export const LanguageSelector = () => {
         defaultValue={language}
         options={LanguageData}
         onChange={changeLanguage}
+        onToggle={onToggle}
       />
     </SWrapper>
   );
 };
 
 const SWrapper = styled.div`
-  width: 8.125rem;
-  ${({ theme }) => media.lessThan(theme, 'desktop')} {
-    width: 6.125rem;
-  }
+  width: fit-content;
 `;

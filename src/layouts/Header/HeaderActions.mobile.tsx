@@ -16,10 +16,20 @@ import CONST from '@constants/constants';
 type props = {
   isShow: boolean;
   setIsShow: React.Dispatch<React.SetStateAction<boolean>>;
+  hideBurger: () => void;
 };
 
-export const HeaderActionsMobile: FC<props> = ({ isShow, setIsShow }) => {
+export const HeaderActionsMobile: FC<props> = ({
+  isShow,
+  setIsShow,
+  hideBurger,
+}) => {
   const nav = useNavigate();
+  const handleClickLogo = () => {
+    nav('/');
+    hideBurger();
+  };
+
   return (
     <>
       <StyledWrapper>
@@ -35,25 +45,28 @@ export const HeaderActionsMobile: FC<props> = ({ isShow, setIsShow }) => {
           )}
         </IconButton>
         <StyledLogo>
-          <Logo onClick={() => nav('/')} />
+          <Logo onClick={handleClickLogo} />
         </StyledLogo>
-        <LanguageSelector />
+        <LanguageSelector onToggle={hideBurger} />
       </StyledWrapper>
       <StyledAdditive>
         <Tel
           value='77008008283'
           label='+7 700 800 82 83'
           className='phoneLink'
+          onClick={hideBurger}
         />
 
         <StyledLinks>
           <LinkedIcon
             renderIcon={<WhatsappIcon />}
             link={CONST.WHATSAPP_LINK}
+            onClick={hideBurger}
           />
           <LinkedIcon
             renderIcon={<TelegramIcon />}
             link={CONST.TELEGRAM_LINK}
+            onClick={hideBurger}
           />
         </StyledLinks>
       </StyledAdditive>

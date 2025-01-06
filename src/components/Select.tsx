@@ -10,6 +10,7 @@ import clsx from 'clsx';
 export interface IselectOption {
   value: string;
   label: string;
+  icon?: React.ReactNode;
 }
 
 interface SelectProps {
@@ -18,6 +19,7 @@ interface SelectProps {
   onChange: (value: string) => void;
   placeholder?: string;
   width?: string | number;
+  onToggle?: () => void;
 }
 
 export const Select: FC<SelectProps> = ({
@@ -26,12 +28,18 @@ export const Select: FC<SelectProps> = ({
   onChange,
   placeholder = 'Select...',
   width = '100%',
+  onToggle = () => {},
 }) => {
   const { t } = useTranslation();
   const [value, setValue] = useState<IselectOption | null>(
     options.find((option) => option.value === defaultValue) || null
   );
   const { ref: wrapperRef, isShow, setIsShow } = useOutside(false);
+
+  const handleToggle = () => {
+    setIsShow((v) => !v);
+    onToggle();
+  };
 
   const handleChange = (option: IselectOption) => {
     setValue(option);
@@ -41,12 +49,12 @@ export const Select: FC<SelectProps> = ({
 
   return (
     <StyledWrapper ref={wrapperRef} style={{ width: width }}>
-      <StyledSelect
-        onClick={() => setIsShow((v) => !v)}
-        style={{ width: width }}
-      >
+      <StyledSelect onClick={handleToggle} style={{ width: width }}>
+        <div className='icon'>{value?.icon}</div>
         <Text>{t(value?.label || placeholder)}</Text>
-        <ArrowDownIcon className={clsx('icon', isShow && 'active')} />
+        <div>
+          <ArrowDownIcon className={clsx('icon', isShow && 'active')} />
+        </div>
       </StyledSelect>
       {isShow && (
         <StyledOptions style={{ width: width }}>
@@ -63,6 +71,7 @@ export const Select: FC<SelectProps> = ({
                 duration: 0.3,
               }}
             >
+              <div className='icon'>{option.icon}</div>
               <Text className='text'>{t(option.label)}</Text>
             </StyledOptionItem>
           ))}
@@ -81,9 +90,25 @@ const StyledWrapper = styled.div`
       stroke: ${(p) => p.theme.colors.brand};
     }
   }
+`;
+
+const StyledSelect = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.25rem, 0.375vw + 0.175rem, 0.625rem);
+  user-select: none;
+  cursor: pointer;
 
   .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transition: all 0.3s;
+    svg {
+      width: clamp(0.875rem, 0.375vw + 0.8rem, 1.25rem);
+      height: clamp(0.875rem, 0.375vw + 0.8rem, 1.25rem);
+    }
     path {
       transition: stroke 0.15s ease-in;
     }
@@ -93,15 +118,6 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const StyledSelect = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.625rem;
-  user-select: none;
-  cursor: pointer;
-`;
-
 const StyledOptions = styled.div`
   position: absolute;
   top: 2.5rem;
@@ -109,7 +125,7 @@ const StyledOptions = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem 0;
+  padding: 1.5rem clamp(0.125rem, 0.744vw + -0.1429rem, 0.75rem);
   background-color: ${(p) => p.theme.colors.darkLight};
   box-shadow: 2px 3px 20px 0px hsla(0, 0%, 0%, 0.12);
   border-radius: 1rem;
@@ -117,9 +133,11 @@ const StyledOptions = styled.div`
   z-index: 10000;
 `;
 const StyledOptionItem = motion.create(styled.div`
-  text-align: center;
   user-select: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.125rem, 0.6944vw + -0.2083rem, 0.625rem);
 
   .text {
     transition: color 0.15s ease-in;
@@ -128,5 +146,14 @@ const StyledOptionItem = motion.create(styled.div`
   &:hover > .text,
   &.active > .text {
     color: ${(p) => p.theme.colors.brand};
+  }
+
+  .icon {
+    display: flex;
+    align-items: center;
+    svg {
+      width: clamp(0.875rem, 0.375vw + 0.8rem, 1.25rem);
+      height: clamp(0.875rem, 0.375vw + 0.8rem, 1.25rem);
+    }
   }
 `);
