@@ -33,8 +33,8 @@ export default defineConfig({
         short_name: 'Aveelon',
         description:
           'Aveelon - web development studio. We create websites and web applications.',
-        theme_color: '#7A0C18',
-        background_color: '#292C2E',
+        theme_color: '#242323',
+        background_color: '#242323',
         orientation: 'portrait',
         icons: [
           {

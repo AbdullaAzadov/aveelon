@@ -4,7 +4,6 @@ import {
   ProcessCarousel,
   ProcessSteps,
   StackShowcase,
-  TabBar,
   TabCarousel,
 } from '@components/index';
 import {
@@ -26,22 +25,13 @@ export const ServicesPage = () => {
         imageSrc={HeroData.imageSrc}
         buttonText={HeroData.buttonText}
       />
+      <TabCarousel header={ITServicesData.header} tabs={ITServicesData.tabs} />
       {isMobile ? (
-        <>
-          <TabCarousel
-            header={ITServicesData.header}
-            tabs={ITServicesData.tabs}
-          />
-          <ProcessCarousel data={DevProcessData} sectionHeader='dev-process' />
-          <TabCarousel header={DevStepsData.header} tabs={DevStepsData.tabs} />
-        </>
+        <ProcessCarousel data={DevProcessData} sectionHeader='dev-process' />
       ) : (
-        <>
-          <TabBar header={ITServicesData.header} tabs={ITServicesData.tabs} />
-          <ProcessSteps data={DevProcessData} sectionHeader='dev-process' />
-          <TabBar header={DevStepsData.header} tabs={DevStepsData.tabs} />
-        </>
+        <ProcessSteps data={DevProcessData} sectionHeader='dev-process' />
       )}
+      <TabCarousel header={DevStepsData.header} tabs={DevStepsData.tabs} />
 
       <StackShowcase data={TechStackData} />
     </SContainer>

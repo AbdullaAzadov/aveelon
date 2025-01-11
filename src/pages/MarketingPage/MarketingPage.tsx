@@ -2,7 +2,6 @@ import {
   PageHeroSection,
   ProcessCarousel,
   ProcessSteps,
-  TabBar,
   TabCarousel,
   StackShowcase,
 } from '@components/index';
@@ -26,37 +25,25 @@ export const MarketingPage = () => {
         imageSrc={HeroData.imageSrc}
         buttonText={HeroData.buttonText}
       />
+      <TabCarousel
+        header={MarketingServicesData.header}
+        tabs={MarketingServicesData.tabs}
+      />
       {isMobile ? (
-        <>
-          <TabCarousel
-            header={MarketingServicesData.header}
-            tabs={MarketingServicesData.tabs}
-          />
-          <ProcessCarousel
-            data={MarkettingProcessData}
-            sectionHeader='marketing-process'
-          />
-          <TabCarousel
-            header={PromotionMethodsData.header}
-            tabs={PromotionMethodsData.tabs}
-          />
-        </>
+        <ProcessCarousel
+          data={MarkettingProcessData}
+          sectionHeader='marketing-process'
+        />
       ) : (
-        <>
-          <TabBar
-            header={MarketingServicesData.header}
-            tabs={MarketingServicesData.tabs}
-          />
-          <ProcessSteps
-            data={MarkettingProcessData}
-            sectionHeader='marketing-process'
-          />
-          <TabBar
-            header={PromotionMethodsData.header}
-            tabs={PromotionMethodsData.tabs}
-          />
-        </>
+        <ProcessSteps
+          data={MarkettingProcessData}
+          sectionHeader='marketing-process'
+        />
       )}
+      <TabCarousel
+        header={PromotionMethodsData.header}
+        tabs={PromotionMethodsData.tabs}
+      />
 
       <StackShowcase data={MarketingStackData} />
     </SContainer>

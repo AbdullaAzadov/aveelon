@@ -13,16 +13,10 @@ export interface ITabBarContent {
 export interface ITabBarProps {
   header: string;
   tabs: ITabBarContent[];
-  cardSize?: 'small' | 'normal';
   tabSize?: 's' | 'm';
 }
 
-export const TabBar: FC<ITabBarProps> = ({
-  header,
-  tabs,
-  cardSize = 'normal',
-  tabSize = 'm',
-}) => {
+export const TabBar: FC<ITabBarProps> = ({ header, tabs, tabSize = 'm' }) => {
   const tabSections = tabs
     .map((tab) => tab.tabName)
     .filter((name): name is string => name !== undefined);
@@ -50,7 +44,7 @@ export const TabBar: FC<ITabBarProps> = ({
         )}
       </div>
       <AnimatePresence mode='wait'>
-        <Grid key={selectedIndex} $count={currentTab.card.length} $cols={4}>
+        <Grid key={selectedIndex}>
           {currentTab.card.map((card, index) => (
             <Card
               key={index}
@@ -58,7 +52,6 @@ export const TabBar: FC<ITabBarProps> = ({
               icon={card.icon}
               title={card.title}
               body={card.body}
-              className={cardSize}
             />
           ))}
         </Grid>
@@ -68,6 +61,7 @@ export const TabBar: FC<ITabBarProps> = ({
 };
 
 const StyledWrapper = styled.div`
+  width: 100%;
   .heading {
     margin-bottom: 3.75rem;
     display: flex;
@@ -82,16 +76,16 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const Grid = styled.div<{ $count: number; $cols: number }>`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+const Grid = styled.div`
+  width: 100%;
+  display: grid;
+  gap: clamp(0.25rem, -0.1538rem + 1.7949vw, 2rem);
 
-  ${({ theme }) => media.lessThan(theme, 'wideTablet')} {
-    gap: 1rem;
-  }
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+
   ${({ theme }) => media.lessThan(theme, 'tablet')} {
-    gap: 0.5rem;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
   }
 `;

@@ -62,12 +62,18 @@ export const Card: FC<ICardProps> = ({
 
 const StyledCard = styled.div`
   flex: 0;
-  padding: 3.125rem;
+  padding: clamp(2.5rem, 2.0833rem + 0.8681vw, 3.125rem);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
   border-radius: 1.25rem;
   background-color: ${(p) => p.theme.colors.gray};
+
+  @media screen and (max-width: 1576px) {
+    .title {
+      font-size: clamp(1.5rem, 0.0743rem + 2.9703vw, 3rem);
+    }
+  }
 
   .icon svg {
     height: 4rem;
@@ -76,46 +82,7 @@ const StyledCard = styled.div`
     }
   }
 
-  &.normal {
-    max-width: 29rem;
-    min-width: 29rem;
-
-    ${({ theme }) => media.between(theme, 'tablet', 'desktop')} {
-      min-width: 15rem;
-      width: clamp(15rem, 43.75vw - 6rem, 29rem);
-    }
-    ${({ theme }) => media.lessThan(theme, 'tablet')} {
-      min-width: 14rem;
-    }
-  }
-
-  &.small {
-    max-width: 19.75rem;
-    min-width: 19.75rem;
-
-    ${({ theme }) => media.between(theme, 'tablet', 'wideTablet')} {
-      min-width: 15rem;
-      width: clamp(15rem, 6.597vw + 11.833rem, 19.75rem);
-    }
-    ${({ theme }) => media.between(theme, 'smallMobile', 'tablet')} {
-      min-width: 8rem;
-      width: clamp(8rem, 22.222vw + 1.333rem, 12rem);
-    }
-    ${({ theme }) => media.lessThan(theme, 'smallMobile')} {
-      min-width: 7rem;
-    }
-  }
-
   ${({ theme }) => media.lessThan(theme, 'tablet')} {
     padding: 2.5rem 1.25rem;
-  }
-
-  &:not(.small) {
-    .title {
-      height: 40%;
-    }
-    .body {
-      height: 50%;
-    }
   }
 `;
