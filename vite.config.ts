@@ -2,12 +2,12 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import svgo from 'vite-plugin-svgo';
-import terser from '@rollup/plugin-terser';
+import { VitePWA } from 'vite-plugin-pwa';
 
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    minify: 'terser',
+    manifest: true,
     rollupOptions: {
       output: {
         manualChunks(id) {
@@ -15,11 +15,56 @@ export default defineConfig({
             return 'vendor';
           }
         },
-        plugins: [terser()],
+        plugins: [],
       },
     },
   },
-  plugins: [react(), svgo()],
+  plugins: [
+    react(),
+    svgo(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      workbox: {
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,webp}'],
+      },
+      includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'robots.txt'],
+      manifest: {
+        name: 'Aveelon',
+        short_name: 'Aveelon',
+        description:
+          'Aveelon - web development studio. We create websites and web applications.',
+        theme_color: '#7A0C18',
+        background_color: '#292C2E',
+        orientation: 'portrait',
+        icons: [
+          {
+            src: '/pwa-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any',
+          },
+          {
+            src: '/pwa-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any',
+          },
+          {
+            src: '/pwa-maskable-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'maskable',
+          },
+          {
+            src: '/pwa-maskable-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'maskable',
+          },
+        ],
+      },
+    }),
+  ],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src/'),
